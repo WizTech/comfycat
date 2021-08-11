@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </b-col>
-        </div>  
+        </div>
         <b-modal id="addToCart" title="your cart" hide-footer modal-class="addToCart">
             <div class="addCartSection">
                 <p class="active text-center"><font-awesome-icon :icon="['far', 'check-square']" class="mr-2"/>You qualify for free shipping!</p>
@@ -111,10 +111,10 @@
                             <h5>Size: 20lb</h5>
                             <h5>Price: <span class="active">$25</span></h5>
                             <h5>Deliver:</h5>
-                            <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked> 
+                            <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
                                 Once every 2 months
                             </b-form-checkbox>
-                            <b-form-checkbox id="checkbox-2" name="checkbox-2" value="accepted"> 
+                            <b-form-checkbox id="checkbox-2" name="checkbox-2" value="accepted">
                                 Once every 3 months
                             </b-form-checkbox>
                             <div class="quantity mt-3">
@@ -150,15 +150,15 @@
             </div>
             <div class="addCartSection footer">
                 <p class="text-center bold">SUBTOTAL: $50 <a href="#" class="active ml-4">VIEW CART</a></p>
-                <b-button variant="theme" class="w-100">checkout now</b-button>
+                <b-button variant="theme" class="w-100" to="checkout">checkout now</b-button>
             </div>
-        </b-modal>  
+        </b-modal>
     </div>
 </template>
 
 <script>
     export default {
-        
+
     }
 </script>
 

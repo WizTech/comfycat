@@ -7,7 +7,7 @@
                     <p>
                         100% Natural Premium Clumping Litter. Dust free, Clumps in seconds, Flushable.  Great odor control. Absorbs moisture 3x better than Clay.
                     </p>
-                    <button class="btn btn-theme mx-auto">SUBSCRIBE NOW</button>
+                  <b-button variant="theme" class="mx-auto">subscribe now</b-button>
                 </div>
                 <b-img src="~assets/images/product1.png" fluid alt="product1"></b-img>
             </div>
@@ -20,9 +20,9 @@
                 <div class="content">
                     <h2>Self-Cleaning litter Boxes</h2>
                     <p>
-                    Beautiful automated self-cleaning litter boxes. For stylish Kitties. And cool interior design. 
+                    Beautiful automated self-cleaning litter boxes. For stylish Kitties. And cool interior design.
                     </p>
-                    <button class="btn btn-theme mx-auto">shop</button>
+                    <b-button variant="theme" to="product_detail" class="mx-auto">shop</b-button>
                 </div>
                 <b-img src="~assets/images/product2.png" fluid alt="product2"></b-img>
             </div>
@@ -32,7 +32,7 @@
 
 <script>
     export default {
-        
+
     }
 </script>
 
