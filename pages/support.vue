@@ -7,6 +7,7 @@
             banner_image="support.png"
             bannerVersion="bannerGap"
         ></Banner>
+        <Support/>
     </main>
 </template>
 

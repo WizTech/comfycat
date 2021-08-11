@@ -21,7 +21,7 @@
                             <ul class="single-menu">
                                 <li><a href="#">ABOUT US</a></li>
                                 <li><a href="#">contact US</a></li>
-                                <li><a href="#">SUPPORT</a></li>
+                                <li><NuxtLink to="support">SUPPORT</NuxtLink></li>
                             </ul>
                             <ul class="single-menu">
                                 <li><a href="#">LEGAL</a></li>

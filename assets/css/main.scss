@@ -2679,6 +2679,34 @@ p {
     }
 }
 
+.faq-section {
+    .faqSingle {
+        border-bottom: 1px solid #E4EBED;
+        padding: 0 0 1.25rem;
+        .faqTitle {
+            padding: 1.25rem 2.5rem 0;
+            position: relative;
+            font-size: 1.358rem;
+            margin: 0;
+            &:before {
+                content: '+';
+                font-size: 2.5rem;
+                line-height: 1;
+                position: absolute;
+                left: 0;
+                top: 11px;
+                color: var(--primary-color);
+            }
+        }
+        .collapse {
+            padding: 1.25rem 2.5rem 0;
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
 @media (min-width: 1590px) {
     .container,
     .container-lg,
