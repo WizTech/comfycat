@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="giveaway_desc">
                                         <p>
-                                            Free Gift if order placed before April 15th: 
+                                            Free Gift if order placed before April 15th:
                                             USB rechargeable Crazy Jumping and Rolling Cat Ball!
                                             <strong class="d-block">A $50 Value</strong>
                                         </p>
@@ -81,7 +81,7 @@
                                 </div>
                                 <b-row class="ready-btn">
                                     <b-col md="6" class="mb-md-0 mb-3">
-                                        <b-button variant="theme" class="w-100">I AM READY: ADD TO CART</b-button>
+                                        <b-button variant="theme" class="w-100" to="cart">I AM READY: ADD TO CART</b-button>
                                     </b-col>
                                     <b-col md="6">
                                         <b-button variant="theme" class="w-100">
@@ -97,7 +97,7 @@
                                 <div class="form-group" v-show="this.version_v1">
                                     <b-form-input placeholder="Your email address"></b-form-input>
                                 </div>
-                                <b-button variant="theme" class="w-100">add to cart</b-button>
+                                <b-button variant="theme" class="w-100" to="cart">add to cart</b-button>
                             </b-col>
                         </b-row>
                     </div>
@@ -117,7 +117,7 @@
                 version_v2: this.versionV2,
                 showHideArrows: this.withArrows,
             }
-        },      
+        },
     }
 </script>
 
