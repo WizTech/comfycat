@@ -355,6 +355,17 @@ strong,
             }
         }
     }
+    &.InnerBanner {
+        .banner-partImg {
+            @media (max-width: 767px) {
+                position: static;
+                text-align: center;
+                img {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
 }
 
 header .navbar-expand-lg {
@@ -1658,6 +1669,7 @@ footer .cpr p {
         padding: 0 15px;
         flex-wrap: nowrap;
         border: 0;
+        white-space: nowrap;
         @media (min-width: 579px) {
             max-width: 540px;
         }
@@ -1684,6 +1696,7 @@ footer .cpr p {
             color: #000;
             padding: 0;
             border: 0;
+            text-transform: uppercase;
             padding-bottom: 10px;
             font-size: 1.2rem;
             font-weight: 500;
@@ -1812,6 +1825,7 @@ footer .cpr p {
     margin: 0 -15px;
     .slick-track {
         display: flex;
+        margin: 0;
     }
     .slick-slide {
         height: inherit;
@@ -2704,6 +2718,49 @@ p {
                 margin: 0;
             }
         }
+    }
+}
+
+.catLitterBanner {
+    position: relative;
+    .bannerBg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+        border-radius: 7px;
+        border: 2px solid #EDF3F4;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .bannerContent {
+        position: relative;
+        z-index: 1;
+        padding: 30px;
+        img {
+            max-height: 300px;
+        }
+    }
+    @media (max-width: 767px) {
+        margin-bottom: 25px;
+    }
+}
+
+.popProduct-noHeading {
+    .content h2 {
+        display: none;
+    }
+}
+
+.popProduct-noPadding {
+    .g_section {
+        padding: 0;
     }
 }
 
