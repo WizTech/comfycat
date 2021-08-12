@@ -1,9 +1,9 @@
 <template>
     <div class="productCartDesc seller">
         <div class="sell_desc">
-            <h2>COMFYCAT ZEN SELF-CLEANING LITTER BOX</h2>
+            <h2>{{product.name}}</h2>
             <div class="sell_price">
-                <h2 class="active">$399</h2>
+                <h2 class="active">${{product.price}}</h2>
             </div>
             <hr>
             <div class="content">
@@ -157,9 +157,14 @@
 </template>
 
 <script>
-    export default {
-
-    }
+    import { mapGetters } from 'vuex'
+        export default {
+            computed: {
+                  product(){
+                      return this.$store.getters.getProductById(this.$route.params.id);
+                  }
+              }
+        }
 </script>
 
 <style lang="scss" scoped>

@@ -22,17 +22,22 @@
                                 <PopularProducts>
                                     <template slot="popularProduct">
                                         <slick :options="popularProductTwice">
-                                            <div class="singlePopProd">
+                                            <div class="singlePopProd"
+                                                 v-for="product in products"
+                                                :key="product.id"
+                                                 v-if="product.category ==='zen'"
+                                            >
                                                 <div class="singlePopImg">
-                                                    <b-img src="~assets/images/product1.png" fluid alt="eo14"></b-img>
+<!--                                                    <b-img src="~assets/images/product1.png" fluid alt="eo14"></b-img>-->
+                                                    <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
                                                 </div>
                                                 <div class="singlePopDesc">
-                                                    <h2>COMFYCAT MAX SELF-CLEANING LITTER BOX</h2>
-                                                    <b-button variant="theme" class="no-line" to="product_detail"><span>499$</span> VIEW NOW</b-button>
+                                                    <h2>{{product.name}}</h2>
+                                                    <b-button variant="theme" class="no-line" :to="`/product/${product.id}`"><span>{{product.price}}$</span> VIEW NOW</b-button>
                                                 </div>
                                             </div>
-                                        </slick>   
-                                    </template>   
+                                        </slick>
+                                    </template>
                                 </PopularProducts>
                             </div>
                         </b-col>
@@ -56,17 +61,21 @@
                                 <PopularProducts>
                                     <template slot="popularProduct">
                                         <slick :options="popularProductTwice">
-                                            <div class="singlePopProd">
+                                            <div class="singlePopProd"
+                                                 v-for="product in products"
+                                                 :key="product.id"
+                                                  v-if="product.category ==='max'"
+                                            >
                                                 <div class="singlePopImg">
-                                                    <b-img src="~assets/images/eo3_1.png" fluid alt="eo14"></b-img>
+                                                  <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
                                                 </div>
                                                 <div class="singlePopDesc">
-                                                    <h2>COMFYCAT ZEN SELF-CLEANING LITTER BOX</h2>
-                                                    <b-button variant="theme" class="no-line" to="product_detail"><span>399$</span> VIEW NOW</b-button>
+                                                    <h2>{{product.name}}</h2>
+                                                    <b-button variant="theme" class="no-line" :to="`/product/${product.id}`"><span>{{product.price}}$</span> VIEW NOW</b-button>
                                                 </div>
                                             </div>
-                                        </slick>   
-                                    </template>   
+                                        </slick>
+                                    </template>
                                 </PopularProducts>
                             </div>
                         </b-col>
@@ -96,9 +105,9 @@
                                         <b-button variant="theme" class="no-line" to="product_detail"><span>399$</span> VIEW NOW</b-button>
                                     </div>
                                 </div>
-                            </slick>   
-                        </template>    
-                    </PopularProducts> 
+                            </slick>
+                        </template>
+                    </PopularProducts>
                 </div>
             </b-tab>
         </b-tabs>
@@ -106,6 +115,7 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex';
     export default {
         data(){
             return {
@@ -140,8 +150,13 @@
                     ]
                 },
             }
+        },
+        computed:{
+            ...mapState([
+                'products'
+            ])
         }
-        
+
     }
 </script>
 

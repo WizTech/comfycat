@@ -22,7 +22,7 @@
                     <p>
                     Beautiful automated self-cleaning litter boxes. For stylish Kitties. And cool interior design.
                     </p>
-                    <b-button variant="theme" to="product_detail" class="mx-auto">shop</b-button>
+                    <b-button variant="theme" to="product" class="mx-auto">shop</b-button>
                 </div>
                 <b-img src="~assets/images/product2.png" fluid alt="product2"></b-img>
             </div>
