@@ -33,7 +33,7 @@
                                                 </div>
                                                 <div class="singlePopDesc">
                                                     <h2>{{product.name}}</h2>
-                                                    <b-button variant="theme" class="no-line" :to="`/product/${product.id}`"><span>{{product.price}}$</span> VIEW NOW</b-button>
+                                                    <b-button variant="theme" class="no-line" :to="`/product/${product.slug}`"><span>{{product.price}}$</span> VIEW NOW</b-button>
                                                 </div>
                                             </div>
                                         </slick>
@@ -71,7 +71,7 @@
                                                 </div>
                                                 <div class="singlePopDesc">
                                                     <h2>{{product.name}}</h2>
-                                                    <b-button variant="theme" class="no-line" :to="`/product/${product.id}`"><span>{{product.price}}$</span> VIEW NOW</b-button>
+                                                    <b-button variant="theme" class="no-line" :to="`/product/${product.slug}`"><span>{{product.price}}$</span> VIEW NOW</b-button>
                                                 </div>
                                             </div>
                                         </slick>

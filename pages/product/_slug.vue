@@ -24,7 +24,7 @@
                 </div>
             </template>
         </ProductBanner>
-        <SellProductDescription :product="product">
+        <SellProductDescription>
             <template slot="galleryPhotos">
                 <slick :options="galleryPhotos">
                     <div class="imgContainer"><b-img src="~assets/images/eo14.png" fluid alt="eo14"></b-img></div>
@@ -176,7 +176,7 @@
         },
         computed: {
             product(){
-                return this.$store.getters.getProductById(this.$route.params.id);
+                return this.$store.getters.getProductById(this.$route.params.slug);
             }
         }
     }
