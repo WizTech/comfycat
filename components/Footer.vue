@@ -19,14 +19,14 @@
                                 <li><a href="#">Self-Cleaning Litter Boxes</a></li>
                             </ul>
                             <ul class="single-menu">
-                                <li><a href="#">ABOUT US</a></li>
-                                <li><a href="#">contact US</a></li>
+                                <li><NuxtLink to="about">ABOUT US</NuxtLink></li>
+                                <li><NuxtLink to="contact_us">contact US</NuxtLink></li>
                                 <li><NuxtLink to="support">SUPPORT</NuxtLink></li>
                             </ul>
                             <ul class="single-menu">
-                                <li><a href="#">LEGAL</a></li>
+                                <li><NuxtLink to="legal">LEGAL</NuxtLink></li>
                                 <li><a href="#">SHIPPING</a></li>
-                                <li><a href="#">RETURNS</a></li>
+                                <li><NuxtLink to="return">RETURNS</NuxtLink></li>
                             </ul>
                         </div>
                     </b-col>

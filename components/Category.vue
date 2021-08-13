@@ -28,7 +28,6 @@
                                                  v-if="product.category ==='zen'"
                                             >
                                                 <div class="singlePopImg">
-<!--                                                    <b-img src="~assets/images/product1.png" fluid alt="eo14"></b-img>-->
                                                     <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
                                                 </div>
                                                 <div class="singlePopDesc">

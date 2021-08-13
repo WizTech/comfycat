@@ -51,7 +51,7 @@
                             </b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item href="#">
-                            Self-Cleaning Litter Boxes
+                            Self-Cleaning Litter Boxes 
                         </b-nav-item>
                     </b-navbar-nav>
                     <div class="profileMobile d-flex d-lg-none">
@@ -75,7 +75,7 @@
                                 </i>
                                 <span class="count">
                                     <font-awesome-icon :icon="['fa', 'heart']"/>
-                                    2
+                                    {{cartData.length }}
                                 </span>
                             </NuxtLink>
                         </li>
@@ -87,8 +87,14 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     export default {
-        
+        computed: {
+            ...mapState([
+                'cartData'
+            ])
+
+        }
     }
 </script>
 

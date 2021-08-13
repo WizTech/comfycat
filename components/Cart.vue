@@ -43,7 +43,7 @@
             </div>
             <div class="addCartSection">
               <div class="productSelected">
-                <div class="singleProduct" v-for="product in cartData">
+                <div class="singleProduct" v-for="product in cartData" :key=product.id>
                   <div class="singleImage">
                     <b-img src="~assets/images/product1.png" fluid alt="product1"></b-img>
                   </div>

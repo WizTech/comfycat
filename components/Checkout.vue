@@ -154,10 +154,10 @@
                                 <div class="sidebarContent">
                                     <div class="content text-lg-left text-md-center text-left">
                                         <h3>order summary</h3>
-                                        <div class="forFree mt-4" v-for="product in cartData">
+                                        <div class="forFree mt-4" v-for="product in cartData" :key="product.id">
                                             <div class="freeItem bg-white">
                                                 <div class="freeImg">
-                                                    <b-img src="~assets/images/product1.png" fluid alt="product"></b-img>
+                                                    <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
                                                 </div>
                                                 <div class="freeDesc cartCard">
                                                     <div class="summaryCart text-left">

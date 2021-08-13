@@ -134,10 +134,10 @@
           You qualify for free shipping!
         </p>
         <div class="productSelected">
-          <div class="singleProduct" v-for="cartProduct in cartData">
+          <div class="singleProduct" v-for="cartProduct in cartData" :key="cartProduct.id">
 
             <div class="singleImage">
-              <b-img src="~assets/images/product1.png" fluid alt="product1"></b-img>
+              <b-img :src="require(`@/assets/images/${cartProduct.images}`)"  fluid alt="eo14"></b-img>
             </div>
             <div class="singleDesc">
               <b-button variant="transparent" class="discardProduct" @click="removeItem(cartProduct.id)">
