@@ -126,7 +126,7 @@
                                 </div>                                
                                 <b-row class="align-items-center">
                                     <b-col md="6">
-                                        <b-button variant="theme" class="w-100" to="thankyou">pay now</b-button>
+                                        <b-button variant="theme" class="w-100" to="confirmation">pay now</b-button>
                                     </b-col>
                                 </b-row>
                             </b-form>
