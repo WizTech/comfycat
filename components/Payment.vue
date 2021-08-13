@@ -27,30 +27,30 @@
                                             <div class="infoDetail">
                                                 <p>Contact</p>
                                                 <div class="inputValue">
-                                                    <p></p>
+                                                    <p>{{billingData.first_name+' '+billingData.last_name}}</p>
                                                 </div>
                                             </div>
-                                            <a href="" class="active">Change</a>
+                                            <a href="javascript:void(0)" class="active">Change</a>
                                         </div>
                                         <div class="infoSingle">
                                             <div class="infoDetail">
                                                 <p>Ship to</p>
                                                 <div class="inputValue">
-                                                    <p></p>
+                                                    <p>{{billingData.address}}</p>
                                                 </div>
                                             </div>
-                                            <a href="" class="active">Change</a>
+                                            <a href="javascript:void(0)" class="active">Change</a>
                                         </div>
                                         <div class="infoSingle">
                                             <div class="infoDetail">
                                                 <p>Method</p>
                                                 <div class="inputValue">
-                                                    <p>Standard (3-7 Day Delivery)</p>
+                                                    <p>{{billingData.shipping_method}}</p>
                                                 </div>
                                             </div>
                                             <a href="" class="active">Change</a>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
                                 <div class="singleCheckout dashboardForm">
                                     <h4 class="mb-2">Payment</h4>
@@ -122,8 +122,8 @@
                                                 </b-col>
                                             </b-row>
                                         </b-collapse>
-                                    </div> 
-                                </div>                                
+                                    </div>
+                                </div>
                                 <b-row class="align-items-center">
                                     <b-col md="6">
                                         <b-button variant="theme" class="w-100" to="confirmation">pay now</b-button>
@@ -136,7 +136,7 @@
                                     <li><a href="#">Disclaimer</a></li>
                                     <li><a href="#">Terms & Conditions</a></li>
                                 </ul>
-                            </div>                        
+                            </div>
                         </div>
                     </b-col>
                     <b-col lg="5" class="order-lg-1 order-0">
@@ -145,23 +145,24 @@
                                 <div class="sidebarContent">
                                     <div class="content text-lg-left text-md-center text-left">
                                         <h3>order summary</h3>
-                                        <div class="forFree mt-4">
-                                            <div class="freeItem bg-white">
-                                                <div class="freeImg">
-                                                    <b-img src="~assets/images/product1.png" fluid alt="product"></b-img>
-                                                </div>
-                                                <div class="freeDesc cartCard">
-                                                    <div class="summaryCart text-left">
-                                                        <h6>100% Natural Premium Clumping litter </h6>
-                                                        <h5 class="active d-block d-lg-none">$25</h5>
-                                                        <p>Size: 20lb</p>
-                                                        <p>Quantity: 2</p>
-                                                        <p>(Once every 2 months)</p>
-                                                    </div>
-                                                    <h5 class="active d-none d-lg-block">$25</h5>
-                                                </div>
-                                            </div>
-                                        </div>
+                                      <div class="forFree mt-4" v-for="product in cartData">
+                                          <div class="freeItem bg-white">
+                                              <div class="freeImg">
+                                                  <b-img src="~assets/images/product1.png" fluid alt="product"></b-img>
+                                              </div>
+                                              <div class="freeDesc cartCard">
+                                                  <div class="summaryCart text-left">
+                                                      <h6>{{product.name}}</h6>
+                                                      <h5 class="active d-block d-lg-none">${{product.price}}</h5>
+                                                      <p>Size: 20lb</p>
+                                                      <p>Quantity: 1</p>
+                                                      <p>(Once every 2 months)</p>
+                                                  </div>
+                                                  <h5 class="active d-none d-lg-block">${{product.price}}</h5>
+                                              </div>
+                                          </div>
+                                      </div>
+
                                         <div class="promoCode">
                                             <b-form>
                                                 <b-row>
@@ -178,20 +179,20 @@
                                             <div class="summaryTotals m-0">
                                                 <div class="singleTotal">
                                                     <p>Subtotal</p>
-                                                    <p>$50.00</p>
+                                                  <p>${{subTotal}}</p>
                                                 </div>
                                                 <div class="singleTotal">
                                                     <p>Shipping</p>
-                                                    <p>Free</p>
+                                                    <p>{{billingData.shipping_method}}</p>
                                                 </div>
                                                 <div class="singleTotal total">
                                                     <p>Total</p>
-                                                    <p>$50.00</p>
+                                                  <p>${{subTotal}}</p>
                                                 </div>
                                             </div>
-                                        </div>                                    
+                                        </div>
                                     </div>
-                                </div>                                
+                                </div>
                             </b-col>
                         </aside>
                     </b-col>
@@ -202,6 +203,8 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
+
     export default {
         data(){
             return {
@@ -220,8 +223,14 @@
                     this.payment_PP_form = true
                 }
             }
+        },
+        computed: {
+            ...mapState([
+                'cartData', 'subTotal','billingData'
+            ])
+
         }
-        
+
     }
 </script>
 

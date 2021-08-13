@@ -42,52 +42,60 @@
                                         </b-col>
                                     </b-row>
                                 </div>
-                                <div class="singleCheckout dashboardForm">
+                            </b-form>
+                             <b-form @submit="submitBilling($event)">
+                                <div class="singleCheckout dashboardForm" ref="billingDiv">
                                     <h4>billing</h4>
+                                  <div class="alert alert-danger text-left mt-2" v-if="errors.length">
+                                    <p><b>Please correct the following error(s):</b></p>
+                                    <ul>
+                                      <li v-for="error in errors">{{ error }}</li>
+                                    </ul>
+                                  </div>
                                     <b-row>
                                         <b-col md="6">
                                             <div class="form-group">
-                                                <b-form-input placeholder="First Name"></b-form-input>
+                                                <b-form-input placeholder="First Name" v-model="form.first_name"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="6">
                                             <div class="form-group">
-                                                <b-form-input placeholder="Last Name"></b-form-input>
+                                                <b-form-input placeholder="Last Name" v-model="form.last_name"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="12">
                                             <div class="form-group">
-                                                <b-form-input type="email" placeholder="Email"></b-form-input>
+                                                <b-form-input type="email" placeholder="Email" v-model="form.email"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="6">
                                             <div class="form-group">
-                                                <b-form-input type="password" placeholder="Password"></b-form-input>
+                                                <b-form-input type="password" placeholder="Password" v-model="form.password"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="6">
                                             <div class="form-group">
-                                                <b-form-input type="password" placeholder="Confirm Password"></b-form-input>
+                                                <b-form-input type="password" placeholder="Confirm Password" v-model="form.c_password"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="12">
                                             <div class="form-group">
-                                                <b-form-input type="text" placeholder="Phone number"></b-form-input>
+                                                <b-form-input type="text" placeholder="Phone number" v-model="form.phone"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="6">
                                             <div class="form-group">
-                                                <b-form-input type="text" placeholder="Address"></b-form-input>
+                                                <b-form-input type="text" placeholder="Address" v-model="form.address"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="6">
                                             <div class="form-group">
-                                                <b-form-input type="text" placeholder="Apartment"></b-form-input>
+                                                <b-form-input type="text" placeholder="Apartment" v-model="form.apartment"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="12">
                                             <div class="form-group">
-                                                <b-form-input type="text" placeholder="City"></b-form-input>
+                                                <b-form-input type="text" placeholder="City" v-model="form.city"></b-form-input>
                                             </div>
                                         </b-col>
                                         <b-col md="4">
@@ -106,7 +114,7 @@
                                         </b-col>
                                         <b-col md="4">
                                             <div class="form-group">
-                                                <b-form-input type="text" placeholder="ZIP code"></b-form-input>
+                                                <b-form-input type="text" placeholder="ZIP code" v-model="form.zip"></b-form-input>
                                             </div>
                                         </b-col>
                                     </b-row>
@@ -116,13 +124,13 @@
                                     <b-row>
                                         <b-col cols="12">
                                             <div class="form-group block-radio">
-                                                <b-form-radio name="shippingTime">
+                                                <b-form-radio name="shippingTime" value="Standard (3-7 Day Delivery)" v-model="form.shipping_method">
                                                     Standard (3-7 Day Delivery)
                                                     <strong>Free</strong>
                                                 </b-form-radio>
                                             </div>
                                             <div class="form-group block-radio">
-                                                <b-form-radio name="shippingTime">
+                                                <b-form-radio name="shippingTime" value="Expedited (1-3 Day Delivery)" v-model="form.shipping_method">
                                                     Expedited (1-3 Day Delivery)
                                                     <strong>$30.00</strong>
                                                 </b-form-radio>
@@ -132,13 +140,13 @@
                                 </div>
                                 <b-row class="align-items-center">
                                     <b-col md="6">
-                                        <b-button variant="theme" class="w-100" to="payment">continue to payment</b-button>
+                                        <b-button variant="theme" type="submit" class="w-100">continue to payment</b-button>
                                     </b-col>
                                     <b-col md="6" class="mt-md-0 mt-3">
                                         <NuxtLink to="cart" class="text-uppercase bold active text-md-left text-center d-block">return to cart</NuxtLink>
                                     </b-col>
                                 </b-row>
-                            </b-form>
+                             </b-form>
                             <div class="checkoutTerms">
                                 <ul>
                                     <li><a href="#">Privacy Policy</a></li>
@@ -212,9 +220,87 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+    import {mapState,mapMutations} from 'vuex'
 
     export default {
+        data(){
+          return {
+              errors:[],
+              form: {
+                  first_name: '',
+                  last_name: '',
+                  email: '',
+                  password: '',
+                  c_password: 0,
+                  phone: '',
+                  country: '',
+                  address: '',
+                  apartment: '',
+                  city: '',
+                  state: '',
+                  zip:'',
+                  shipping_method:''
+              },
+          }
+        },
+        methods:{
+            ...mapMutations(['saveBillingInfo']),
+            validEmail: function (email) {
+                var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            },
+            submitBilling(event){
+                event.preventDefault();
+                const formData = this.form;
+                this.errors = [];
+                if (!this.form.first_name) {
+                    this.errors.push('First Name required.');
+                }
+
+                if (!this.form.last_name) {
+                    this.errors.push('Last Name required.');
+                }
+
+                if (!this.form.phone) {
+                    this.errors.push('Phone required.');
+                }
+
+                if (!this.form.email) {
+                    this.errors.push('Email required.');
+                } else if (!this.validEmail(this.form.email)) {
+                    this.errors.push('Valid email required.');
+                }
+
+                if (!this.form.address) {
+                    this.errors.push('Address required.');
+                }
+
+                if (!this.form.apartment) {
+                    this.errors.push('Apartment required.');
+                }
+
+                if (!this.form.zip) {
+                    this.errors.push('Apartment required.');
+                }
+
+                if (!this.form.city) {
+                    this.errors.push('Apartment required.');
+                }
+
+                if(this.errors.length == 0) {
+                    this.saveBillingInfo(formData)
+
+                    let obj = this;
+                    setTimeout(function () {
+                        obj.$router.push("/payment");
+                    },200)
+                }else{
+                    let element = this.$refs['billingDiv'];
+                    let top = element.offsetTop;
+                    window.scrollTo(0, top);
+                }
+            }
+        },
         computed: {
             ...mapState([
                 'cartData','subTotal'

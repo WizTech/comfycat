@@ -1,11 +1,26 @@
 export const state = () => ({
         cartData: [],
+        billingData: {
+            first_name: '',
+            last_name: '',
+            email: '',
+            password: '',
+            c_password: '',
+            phone: '',
+            country: '',
+            address: '',
+            apartment: '',
+            city: '',
+            state: '',
+            zip: '',
+            shipping_method: ''
+        },
         subTotal: 0,
         products: [{
                 id: 1,
                 name: "COMFYCAT ZEN SELF-CLEANING LITTER BOX",
                 description: "Your scooping days are over. Comfycat Zen is a fully automatic, self-cleaning litter box for cats. It is safe & quiet and has great odour control.",
-                price: "399",
+                price: "3299",
                 cart: false,
                 qty: 0,
                 category: "zen",
@@ -49,5 +64,14 @@ export const mutations = {
         state.cartData = state.cartData.filter(function(product) {
             return product.id !== id;
         });
+    },
+    removeItem(state, id) {
+        state.cartData = state.cartData.filter(function(product) {
+            return product.id !== id;
+        });
+    },
+    saveBillingInfo(state, data) {
+        state.billingData = data;
+        console.log(state.billingData)
     }
 }
