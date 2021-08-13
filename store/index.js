@@ -1,5 +1,6 @@
 export const state = () => ({
     cartData: [],
+    billingData: [],
     subTotal:0,
     products: [
       {
@@ -49,5 +50,9 @@ export const mutations = {
     state.cartData = state.cartData.filter(function (product) {
       return product.id !== id;
     });
+  },
+  saveBillingInfo(state,data){
+    state.billingData = data;
+    console.log(state.billingData)
   }
 }
