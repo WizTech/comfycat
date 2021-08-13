@@ -2225,7 +2225,7 @@ footer .cpr p {
         }
     }
     @media (max-width: 767px) {
-        padding: 60px 0;
+        padding: 40px 0;
         .form-group {
             margin: 0 0 10px;
         }
@@ -2800,6 +2800,41 @@ p {
 
 main {
     min-height: calc(100vh - 500px);
+}
+
+.previousOrders {
+    padding: 10px 0;
+    .forFree {
+        margin-bottom: 10px;
+        margin-top: 0;
+        .freeItem {
+            .freeDesc {
+                flex: auto;
+                .summaryCart {
+                    flex: auto;
+                    h6 {
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+        @media(min-width: 767px) {
+            margin-bottom: 20px;
+            .freeItem {
+                .freeImg {
+                    flex: 0 0 160px;
+                    max-width: 160px;
+                }
+            }
+        }
+        @media(min-width: 991px) {
+            .freeItem {
+                .freeDesc {
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 1590px) {

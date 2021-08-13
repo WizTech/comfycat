@@ -176,6 +176,26 @@
                                     <h3>order history</h3>                                    
                                 </div>
                                 <h4>You have placed no orders.</h4>
+                                <div class="previousOrders">
+                                    <div class="forFree">
+                                        <div class="freeItem bg-white">
+                                            <div class="freeImg">
+                                                <b-img src="~assets/images/product1.png" fluid alt="product"></b-img>
+                                            </div>
+                                            <div class="freeDesc cartCard">
+                                                <div class="summaryCart text-left">
+                                                    <p class="mb-2"><small>15/10/2020</small></p>
+                                                    <h6>100% Natural Premium Clumping litter </h6>
+                                                    <h5 class="active d-block d-lg-none">$25</h5>
+                                                    <p>Size: 20lb</p>
+                                                    <p>Quantity: 2</p>
+                                                    <p>(Once every 2 months)</p>
+                                                </div>
+                                                <h5 class="active d-none d-lg-block m-0">$25</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </b-tab>
                         <b-tab title="log out"></b-tab>
