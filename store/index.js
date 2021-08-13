@@ -1,6 +1,20 @@
 export const state = () => ({
     cartData: [],
-    billingData: [],
+    billingData: {
+      first_name: '',
+      last_name: '',
+      email: '',
+      password: '',
+      c_password: '',
+      phone: '',
+      country: '',
+      address: '',
+      apartment: '',
+      city: '',
+      state: '',
+      zip: '',
+      shipping_method: ''
+    },
     subTotal:0,
     products: [
       {
