@@ -143,7 +143,7 @@
               <b-button variant="transparent" class="discardProduct" @click="removeItem(cartProduct.id)">
                 <font-awesome-icon :icon="['far', 'times-circle']"/>
               </b-button>
-              <h5>{{cartProduct.name}}</h5>
+              <h5 class="text-uppercase">{{cartProduct.name}}</h5>
               <h5>Size: 20lb</h5>
               <h5>Price: <span class="active">${{cartProduct.price}}</span></h5>
               <h5>Deliver:</h5>
