@@ -1,10 +1,10 @@
 <template>
     <section class="g_section-half">
         <b-tabs class="sellProductTabs categoryPg">
-            <b-tab title="cat litter" active>
+            <b-tab title="Self-Cleaning Litter Boxes" active>
                 <b-container>
                     <b-row class="mb-5">
-                        <b-col lg="6">
+                        <!--<b-col lg="6">
                             <div class="catLitterBanner">
                                 <div class="bannerBg">
                                     <b-img src="~assets/images/bg.png" alt="catLitterBg"></b-img>
@@ -16,7 +16,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </b-col>
+                        </b-col>-->
                         <b-col lg="6">
                             <div class="popProduct-noHeading popProduct-noPadding">
                                 <PopularProducts>
@@ -25,7 +25,7 @@
                                             <div class="singlePopProd"
                                                  v-for="product in products"
                                                 :key="product.id"
-                                                 v-if="product.category ==='zen'"
+
                                             >
                                                 <div class="singlePopImg">
                                                     <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
@@ -41,7 +41,7 @@
                             </div>
                         </b-col>
                     </b-row>
-                    <b-row>
+                    <!--<b-row>
                         <b-col lg="6">
                             <div class="catLitterBanner">
                                 <div class="bannerBg">
@@ -78,10 +78,10 @@
                                 </PopularProducts>
                             </div>
                         </b-col>
-                    </b-row>
+                    </b-row>-->
                 </b-container>
             </b-tab>
-            <b-tab title="Self-Cleaning Litter Boxes">
+            <!--<b-tab title="Self-Cleaning Litter Boxes">
                 <div class="popProduct-noPadding">
                     <PopularProducts class="selfCleaning">
                         <template slot="popularProduct">
@@ -94,19 +94,10 @@
                                     <b-button variant="theme" class="no-line" to="product_detail"><span>499$</span> VIEW NOW</b-button>
                                 </div>
                             </div>
-                            <div class="singlePopProd">
-                                <div class="singlePopImg">
-                                    <b-img src="~assets/images/eo3_1.png" fluid alt="eo14"></b-img>
-                                </div>
-                                <div class="singlePopDesc">
-                                    <h2>COMFYCAT ZEN SELF-CLEANING LITTER BOX</h2>
-                                    <b-button variant="theme" class="no-line" to="product_detail"><span>399$</span> VIEW NOW</b-button>
-                                </div>
-                            </div>
                         </template>
                     </PopularProducts>
                 </div>
-            </b-tab>
+            </b-tab>-->
         </b-tabs>
     </section>
 </template>
