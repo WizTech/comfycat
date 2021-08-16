@@ -60,9 +60,9 @@
         <b-row class="mb-md-4">
           <b-col md="5">
             <div class="color_pallete">
-              <p>Color: <strong data-color-refer="blue">blue</strong></p>
+              <p>Color: <strong data-color-refer="white">white</strong></p>
               <div class="palletes">
-                <div class="single">
+                <!--<div class="single">
                   <b-form-radio name="product_color" value="blue" class="form-check">
                     <span style="background: #DBE7FF"></span>
                   </b-form-radio>
@@ -71,7 +71,7 @@
                   <b-form-radio name="product_color" value="blue" class="form-check">
                     <span style="background: #FCF0ED"></span>
                   </b-form-radio>
-                </div>
+                </div>-->
                 <div class="single">
                   <b-form-radio name="product_color" value="blue" class="form-check">
                     <span style="background: #F5F7F6"></span>
@@ -176,7 +176,7 @@
           </div>
         </div>
       </div>
-      <div class="cartRecommended">
+      <div class="cartRecommended d-none">
         <h5>RECOMMENDED WITH:</h5>
         <div class="forFree">
           <div class="freeItem">

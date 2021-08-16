@@ -54,7 +54,7 @@
                     <h5 class="title">{{product.name}}</h5>
                     <h5>Size: 20lb</h5>
                     <h5>Price: <span class="active">${{product.price}}</span></h5>
-                    <div class="checkType">
+                   <!-- <div class="checkType">
                       <h5>How frequently should we ship this product?</h5>
                       <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
                         One Time Purchase
@@ -72,6 +72,7 @@
                         Once every 3 months
                       </b-form-checkbox>
                     </div>
+                    -->
                     <div class="quantity mt-3">
                       <div class="quantity-btns d-md-none d-block">
                         <b-button variant="dec">
@@ -95,7 +96,7 @@
                 </div>
               </div>
             </div>
-            <div class="cartRecommended">
+            <div class="cartRecommended d-none">
               <h5>RECOMMENDED WITH:</h5>
               <b-row>
                 <b-col lg="6">
