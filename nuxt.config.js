@@ -1,7 +1,7 @@
 export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'wiztech-comfycat-nuxt',
+        title: 'comfycat-nuxt',
         htmlAttrs: {
             lang: 'en'
         },
@@ -19,6 +19,7 @@ export default {
     target: 'static',
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
+        '@/assets/fonts/stylesheet.css',
         '@/assets/css/main.scss',
         'slick-carousel/slick/slick.css',
         'slick-carousel/slick/slick-theme.css'

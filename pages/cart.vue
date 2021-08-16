@@ -10,6 +10,11 @@
             return {
                 ifProduct: true,
             }
+        },
+        head() {
+            return {
+            title: "Comfycat | Cart",
+            }
         }
 
     }

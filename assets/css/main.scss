@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
 :root {
     --primary-color: #F8903F;
     --dark-bg: #26282A;
@@ -3555,5 +3555,34 @@ main {
         -o-background-size: 0 auto;
         -webkit-background-size: 0 auto;
         background-size: 0 auto;
+    }
+}
+
+.categoryPg {
+    .selfCleaning {
+        .popularProductSlider {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            .singlePopProd {
+                flex: 0 0 calc(50% - 30px);
+                max-width: calc(50% - 30px);
+                margin: 0 15px;
+            }
+            @media (min-width: 991px) {
+                .singlePopProd {
+                    flex: 0 0 calc(25% - 30px);
+                    max-width: calc(25% - 30px);
+                }
+            }
+            @media (max-width: 767px) {
+                margin: 0 -7px;
+                .singlePopProd {
+                    flex: 0 0 calc(50% - 14px);
+                    max-width: calc(50% - 14px);
+                    margin: 0 7px;
+                }
+            }
+        }
     }
 }

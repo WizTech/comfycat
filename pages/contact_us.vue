@@ -21,6 +21,11 @@
                 banner_image: '',
                 bannerVersion: ''
             }
+        },
+        head() {
+            return {
+            title: "Comfycat | Contact Us",
+            }
         }
     }
 </script>

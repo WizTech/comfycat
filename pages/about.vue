@@ -21,7 +21,13 @@
                 banner_image: '',
                 bannerVersion: ''
             }
+        },
+        head() {
+            return {
+            title: "Comfycat | About us",
+            }
         }
+        
     }
 </script>
 

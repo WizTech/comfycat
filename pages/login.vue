@@ -6,7 +6,11 @@
 
 <script>
     export default {
-        
+        head() {
+            return {
+            title: "Comfycat | Login",
+            }
+        }
     }
 </script>
 

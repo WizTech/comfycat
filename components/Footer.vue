@@ -15,8 +15,8 @@
                     <b-col lg="5" class="my-lg-0 my-5">
                         <div class="footer-menus">
                             <ul class="single-menu">
-                                <li><a href="#">Cat Litter Subscription</a></li>
-                                <li><a href="#">Self-Cleaning Litter Boxes</a></li>
+                                <li><NuxtLink to="product">Cat Litter Subscription</NuxtLink></li>
+                                <li><NuxtLink to="product">Self-Cleaning Litter Boxes</NuxtLink></li>
                             </ul>
                             <ul class="single-menu">
                                 <li><NuxtLink to="about">ABOUT US</NuxtLink></li>

@@ -15,6 +15,11 @@
             return {
                 withArrows: false,
             }
+        },
+        head() {
+            return {
+            title: "Comfycat | Litter Sales",
+            }
         }
         
     }

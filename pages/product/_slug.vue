@@ -101,6 +101,7 @@
 <script>
     import { mapGetters } from 'vuex'
     export default {
+        props:['saveSlug'],
         data(){
             return {
                 popularProduct: {
@@ -165,7 +166,8 @@
                             dots: true,
                         }
                     }]
-                }
+                },
+                title: this.saveSlug,
             }
         },
         methods: {
@@ -177,6 +179,11 @@
         computed: {
             product(){
                 return this.$store.getters.getProductById(this.$route.params.slug);
+            }
+        },
+        head() {
+            return {
+            title: this.title,
             }
         }
     }

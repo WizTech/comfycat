@@ -10,6 +10,11 @@
             return {
             }
         },
+        head() {
+            return {
+            title: "Comfycat | Checkout",
+            }
+        }
     }
 </script>
 

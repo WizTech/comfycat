@@ -1,6 +1,6 @@
 <template>
     <section class="g_section-half">
-        <b-tabs class="sellProductTabs">
+        <b-tabs class="sellProductTabs categoryPg">
             <b-tab title="cat litter" active>
                 <b-container>
                     <b-row class="mb-5">
@@ -32,7 +32,7 @@
                                                 </div>
                                                 <div class="singlePopDesc">
                                                     <h2>{{product.name}}</h2>
-                                                    <b-button variant="theme" class="no-line" :to="`/product/${product.slug}`"><span>${{product.price}}</span> VIEW NOW</b-button>
+                                                    <b-button variant="theme" class="no-line" :to="`/product/${product.slug}`" saveSlug="saveSlug"><span>${{product.price}}</span> VIEW NOW</b-button>
                                                 </div>
                                             </div>
                                         </slick>
@@ -83,28 +83,26 @@
             </b-tab>
             <b-tab title="Self-Cleaning Litter Boxes">
                 <div class="popProduct-noPadding">
-                    <PopularProducts>
+                    <PopularProducts class="selfCleaning">
                         <template slot="popularProduct">
-                            <slick :options="popularProduct">
-                                <div class="singlePopProd">
-                                    <div class="singlePopImg">
-                                        <b-img src="~assets/images/product1.png" fluid alt="eo14"></b-img>
-                                    </div>
-                                    <div class="singlePopDesc">
-                                        <h2>COMFYCAT MAX SELF-CLEANING LITTER BOX</h2>
-                                        <b-button variant="theme" class="no-line" to="product_detail"><span>499$</span> VIEW NOW</b-button>
-                                    </div>
+                            <div class="singlePopProd">
+                                <div class="singlePopImg">
+                                    <b-img src="~assets/images/product1.png" fluid alt="eo14"></b-img>
                                 </div>
-                                <div class="singlePopProd">
-                                    <div class="singlePopImg">
-                                        <b-img src="~assets/images/eo3_1.png" fluid alt="eo14"></b-img>
-                                    </div>
-                                    <div class="singlePopDesc">
-                                        <h2>COMFYCAT ZEN SELF-CLEANING LITTER BOX</h2>
-                                        <b-button variant="theme" class="no-line" to="product_detail"><span>399$</span> VIEW NOW</b-button>
-                                    </div>
+                                <div class="singlePopDesc">
+                                    <h2>COMFYCAT MAX SELF-CLEANING LITTER BOX</h2>
+                                    <b-button variant="theme" class="no-line" to="product_detail"><span>499$</span> VIEW NOW</b-button>
                                 </div>
-                            </slick>
+                            </div>
+                            <div class="singlePopProd">
+                                <div class="singlePopImg">
+                                    <b-img src="~assets/images/eo3_1.png" fluid alt="eo14"></b-img>
+                                </div>
+                                <div class="singlePopDesc">
+                                    <h2>COMFYCAT ZEN SELF-CLEANING LITTER BOX</h2>
+                                    <b-button variant="theme" class="no-line" to="product_detail"><span>399$</span> VIEW NOW</b-button>
+                                </div>
+                            </div>
                         </template>
                     </PopularProducts>
                 </div>
@@ -148,6 +146,7 @@
                     }
                     ]
                 },
+                saveSlug: "manzar"
             }
         },
         computed:{

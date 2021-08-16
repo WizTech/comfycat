@@ -19,8 +19,10 @@
                 withArrows: false,
             }
         },
-        mounted(){
-           
+        head() {
+            return {
+            title: "Comfycat | Max Sales",
+            }
         }
         
     }
