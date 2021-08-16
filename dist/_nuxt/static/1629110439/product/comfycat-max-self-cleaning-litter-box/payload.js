@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/product/comfycat-max-self-cleaning-litter-box", {data:[{}],fetch:{},mutations:[]});

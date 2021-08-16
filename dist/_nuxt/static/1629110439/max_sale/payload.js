@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/max_sale", {data:[{}],fetch:{},mutations:[]});
