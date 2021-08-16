@@ -19,7 +19,7 @@
                             <div class="content">
                                 <h2>checkout</h2>
                             </div>
-                            <b-form>
+                            <b-form v-bind:class="{ 'd-none': newUser }">
                                 <div class="singleCheckout dashboardForm">
                                     <h4>checkout method</h4>
                                     <b-row>
@@ -38,7 +38,7 @@
                                         </b-col>
                                         <b-col md="6" class="mt-md-0 mt-3">
                                             <h6>New customer?</h6>
-                                            <b-button variant="theme" class="w-100" to="payment">checkout now</b-button>
+                                            <b-button variant="theme" class="w-100" @click="newUser = !newUser">checkout now</b-button>
                                         </b-col>
                                     </b-row>
                                 </div>
@@ -100,15 +100,20 @@
                                         </b-col>
                                         <b-col md="4">
                                             <div class="form-group">
-                                                <b-form-select>
+                                                <b-form-select v-model="form.country">
                                                     <b-form-select-option>Country / Region</b-form-select-option>
+                                                    <b-form-select-option>US</b-form-select-option>
                                                 </b-form-select>
                                             </div>
                                         </b-col>
                                         <b-col md="4">
                                             <div class="form-group">
-                                                <b-form-select>
+                                                <b-form-select v-model="form.state">
                                                     <b-form-select-option>State</b-form-select-option>
+                                                    <b-form-select-option>Florida</b-form-select-option>
+                                                    <b-form-select-option>Texas</b-form-select-option>
+                                                    <b-form-select-option>Delware</b-form-select-option>
+                                                    <b-form-select-option>Colarado</b-form-select-option>
                                                 </b-form-select>
                                             </div>
                                         </b-col>
@@ -226,6 +231,7 @@
         data(){
           return {
               errors:[],
+              newUser:false,
               form: {
                   first_name: '',
                   last_name: '',
