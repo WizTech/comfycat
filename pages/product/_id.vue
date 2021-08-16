@@ -97,7 +97,6 @@
 <script>
     import { mapGetters } from 'vuex'
     export default {
-        props:['saveSlug'],
         data(){
             return {
                 popularProduct: {
@@ -163,7 +162,7 @@
                         }
                     }]
                 },
-                title: this.saveSlug
+                title: this.$route.params.id
             }
         },
         methods: {
@@ -172,10 +171,6 @@
                 this.$refs.sliderSecondary.next()
             }
         },
-        mounted(){
-            let _self = this
-            console.log(_self.title);
-        },
         computed: {
             product(){
                 return this.$store.getters.getProductById(this.$route.params.id);
@@ -183,7 +178,7 @@
         },
         head() {
             return {
-            title: this.title,
+            title: "Comfycat | "+this.title,
             }
         }
     }
