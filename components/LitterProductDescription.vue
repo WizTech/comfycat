@@ -156,7 +156,7 @@
             </b-tab>
         </b-tabs>
     </div>
-    <div class="forFree">
+    <div class="forFree d-none">
       <b-row>
         <b-col cols="12">
             <p>RECOMMENDED WITH:</p>
