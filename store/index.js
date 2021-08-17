@@ -62,7 +62,6 @@ export const mutations = {
 
     setBuyType(state, type) {
         state.buyType = type;
-        console.log('abc', state.buyType)
     },
 
     removeItem(state, id) {
