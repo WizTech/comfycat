@@ -30,7 +30,8 @@
                                                     <p>{{billingData.first_name+' '+billingData.last_name}}</p>
                                                 </div>
                                             </div>
-                                            <a href="javascript:void(0)" class="active">Change</a>
+
+                                            <a href="javascript:void(0)" to="checkout" class="active">Change</a>
                                         </div>
                                         <div class="infoSingle">
                                             <div class="infoDetail">
@@ -48,7 +49,7 @@
                                                     <p>{{billingData.shipping_method}}</p>
                                                 </div>
                                             </div>
-                                            <a href="" class="active">Change</a>
+                                            <a href="javascript:void(0)" class="active">Change</a>
                                         </div>
                                     </div>
                                 </div>

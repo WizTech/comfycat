@@ -12,7 +12,7 @@
               <div class="no-content">
                 <h4>Your cart is empty.</h4>
                 <p>Kitty is waiting for his goodies!</p>
-                <b-button variant="theme">Browse products</b-button>
+                <b-button variant="theme" to="product">Browse products</b-button>
               </div>
             </div>
           </div>
@@ -48,31 +48,31 @@
                     <b-img src="~assets/images/product1.png" fluid alt="product1"></b-img>
                   </div>
                   <div class="singleDesc">
-                    <b-button variant="transparent" class="discardProduct">
+                    <b-button variant="transparent" class="discardProduct" @click="removeItem(product.id)">
                       <font-awesome-icon :icon="['far', 'times-circle']"/>
                     </b-button>
                     <h5 class="title">{{product.name}}</h5>
                     <h5>Size: 20lb</h5>
                     <h5>Price: <span class="active">${{product.price}}</span></h5>
-                   <!-- <div class="checkType">
-                      <h5>How frequently should we ship this product?</h5>
-                      <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
-                        One Time Purchase
-                      </b-form-checkbox>
-                      <b-form-checkbox id="checkbox-2" name="checkbox-2" value="accepted">
-                        Subscription (Regular Deliveries) – Save 20%
-                      </b-form-checkbox>
-                    </div>
-                    <div class="checkType">
-                      <h5>Deliver:</h5>
-                      <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
-                        Once every 2 months
-                      </b-form-checkbox>
-                      <b-form-checkbox id="checkbox-2" name="checkbox-2" value="accepted">
-                        Once every 3 months
-                      </b-form-checkbox>
-                    </div>
-                    -->
+                    <!-- <div class="checkType">
+                       <h5>How frequently should we ship this product?</h5>
+                       <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
+                         One Time Purchase
+                       </b-form-checkbox>
+                       <b-form-checkbox id="checkbox-2" name="checkbox-2" value="accepted">
+                         Subscription (Regular Deliveries) – Save 20%
+                       </b-form-checkbox>
+                     </div>
+                     <div class="checkType">
+                       <h5>Deliver:</h5>
+                       <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
+                         Once every 2 months
+                       </b-form-checkbox>
+                       <b-form-checkbox id="checkbox-2" name="checkbox-2" value="accepted">
+                         Once every 3 months
+                       </b-form-checkbox>
+                     </div>
+                     -->
                     <div class="quantity mt-3">
                       <div class="quantity-btns d-md-none d-block">
                         <b-button variant="dec">
@@ -154,9 +154,12 @@
 </template>
 
 <script>
-    import { mapState } from 'vuex'
+    import {mapState, mapMutations} from 'vuex'
 
     export default {
+        methods: {
+            ...mapMutations(['removeItem'])
+        },
         computed: {
             ...mapState([
                 'cartData', 'subTotal'
