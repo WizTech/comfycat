@@ -22,28 +22,24 @@
                 <b-navbar-brand to="/"><img src="~assets/images/logo.png" alt="logo"></b-navbar-brand>
                 <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav class="me-auto mb-2 mb-lg-0">
-                        <b-nav-item to="litter">
-                            <i class="active">Subscribe</i>
-                            cat litter
-                        </b-nav-item>
+                        <b-nav-item-dropdown>
+                            <template #button-content>
+                                <i class="active">Subscribe</i>
+                                cat litter
+                            </template>
+                            <b-dropdown-item to="litter" @click="setBuyType('subscribe')">
+                                <div class="dropdown-img">
+                                    <img src="~assets/images/cat_litter3.png" alt="Cat litter">
+                                </div>
+                                Cat litter
+                            </b-dropdown-item>
+                        </b-nav-item-dropdown>
                         <b-nav-item-dropdown>
                             <template #button-content>
                                 <i class="active">Purchase</i>
                                 cat litter
                             </template>
-                            <b-dropdown-item to="max_sale">
-                                <div class="dropdown-img">
-                                    <img src="~assets/images/cat_litter1.png" alt="Cat litter">
-                                </div>
-                                Cat litter
-                            </b-dropdown-item>
-                            <b-dropdown-item to="max_saleV2">
-                                <div class="dropdown-img">
-                                    <img src="~assets/images/cat_litter2.png" alt="Cat litter">
-                                </div>
-                                Cat litter
-                            </b-dropdown-item>
-                            <b-dropdown-item href="#">
+                            <b-dropdown-item to="litter">
                                 <div class="dropdown-img">
                                     <img src="~assets/images/cat_litter3.png" alt="Cat litter">
                                 </div>
@@ -87,11 +83,18 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex'
+    import {mapState, mapMutations} from 'vuex'
     export default {
+        
+        methods:{
+            ...mapMutations([
+                'setBuyType'
+            ]),
+        },
         computed: {
             ...mapState([
-                'cartData'
+                'cartData',
+                'buyType'
             ])
 
         }

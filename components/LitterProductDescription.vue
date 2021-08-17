@@ -35,8 +35,9 @@
           </li>
         </ul>
       </div>
+      abc {{buyType}}
         <b-tabs class="subscribeTabs">
-            <b-tab title="purchase" active>
+            <b-tab title="purchase">
                 <div class="sellCard"> 
                     <b-row>
                         <b-col cols="12" class="mb-md-3 mb-2">
@@ -245,9 +246,30 @@
 </template>
 
 <script>
-
+    import {mapGetters, mapState} from 'vuex'
     export default {
-        
+        data(){
+          return {
+            
+          }
+        },
+        mounted(){
+          // if(this.buyType == "subscribe"){
+          //   this.tabIndex = 1
+          // }
+        },
+        computed: {
+            setType(){
+              return this.$store.getters.getBuyTypeMethod();
+            },
+            tabIndex(){
+              return this.$store.getters.buyType == "subscribe" ? 1 : 0;
+            },
+            ...mapState([
+                'buyType'
+            ])
+
+        }
     }
 </script>
 

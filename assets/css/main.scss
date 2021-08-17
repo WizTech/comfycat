@@ -3139,6 +3139,9 @@ main {
 
 .banner.shippingBanner .banner-bg {
     bottom: 80px;
+    @media(max-width: 767px) {
+        bottom: 30px;
+    }
 }
 
 .shipping {
