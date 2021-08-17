@@ -35,10 +35,9 @@
           </li>
         </ul>
       </div>
-      abc {{buyType}}
-        <b-tabs class="subscribeTabs">
+        <b-tabs class="subscribeTabs" v-model="tabIndex">
             <b-tab title="purchase">
-                <div class="sellCard"> 
+                <div class="sellCard">
                     <b-row>
                         <b-col cols="12" class="mb-md-3 mb-2">
                             <p>Minimum order size of 20lb</p>
@@ -87,7 +86,7 @@
                 </div>
             </b-tab>
             <b-tab title="subscribe">
-                <div class="sellCard"> 
+                <div class="sellCard">
                     <b-row>
                         <b-col cols="12" class="mb-md-3 mb-2">
                             <p>We recommend 10 lb per Month per Cat</p>
@@ -248,22 +247,9 @@
 <script>
     import {mapGetters, mapState} from 'vuex'
     export default {
-        data(){
-          return {
-            
-          }
-        },
-        mounted(){
-          // if(this.buyType == "subscribe"){
-          //   this.tabIndex = 1
-          // }
-        },
         computed: {
-            setType(){
-              return this.$store.getters.getBuyTypeMethod();
-            },
             tabIndex(){
-              return this.$store.getters.buyType == "subscribe" ? 1 : 0;
+              return this.buyType == 'subscribe' ? 1 : 0;
             },
             ...mapState([
                 'buyType'
