@@ -78,7 +78,7 @@
                             </div>
                         </b-col>
                         <b-col lg="7">
-                            <b-button variant="theme" class="w-100" @click="addGoal"  v-b-modal.addToCart>
+                            <b-button variant="theme" class="w-100" @click="addItem(1);addGoal"  v-b-modal.addToCart>
                                 add to cart
                             </b-button>
                         </b-col>
@@ -117,7 +117,7 @@
                             <p class="mb-2">You can Cancel Anytime the Subscription.</p>
                         </b-col>
                         <b-col lg="7">
-                            <b-button variant="theme" class="w-100" v-b-modal.addToCart>
+                            <b-button variant="theme" class="w-100" @click="addItem(1);addGoal" v-b-modal.addToCart>
                                 add to cart
                             </b-button>
                         </b-col>
@@ -168,7 +168,7 @@
             </div>
             <div class="freeDesc">
                 <p>Comfycat Zen Self-Cleaning Litter Box</p>
-                <b-button variant="outline-theme" size="sm" @click="addGoal()">$399 – ADD TO CART</b-button>
+                <b-button variant="outline-theme" size="sm" @click="addItem(1);addGoal()">$399 – ADD TO CART</b-button>
             </div>
             </div>
         </b-col>
@@ -245,9 +245,10 @@
 </template>
 
 <script>
-    import {mapGetters, mapState} from 'vuex'
+    import {mapGetters, mapState, mapMutations} from 'vuex'
     export default {
         methods:{
+            ...mapMutations(['addItem', 'removeItem']),
           addGoal(){
               this.$ga.event('Button', 'Click', 'Add to Cart Button', Date.now())
           }
