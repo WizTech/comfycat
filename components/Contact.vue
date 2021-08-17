@@ -57,7 +57,7 @@
             </b-container>
         </div>
         <div class="contactMap">
-            <b-img src="~assets/images/map.png" class="w-100 d-block" alt="map"></b-img>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6307.039150533177!2d-122.42223032388047!3d37.77786164903603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808eb456e2dd%3A0xcb1742ab59d38bda!2sCivic%20Center%2C%20San%20Francisco%2C%20CA%2094102%2C%20USA!5e0!3m2!1sen!2s!4v1629158367223!5m2!1sen!2s" width="600" height="700" style="border:0;" allowfullscreen="" loading="lazy" class="w-100"></iframe>
         </div>
     </section>
 </template>

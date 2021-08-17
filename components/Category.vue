@@ -1,10 +1,10 @@
 <template>
     <section class="g_section-half">
         <b-tabs class="sellProductTabs categoryPg">
-            <b-tab title="Self-Cleaning Litter Boxes" active>
+            <b-tab title="cat litter" active >
                 <b-container>
                     <b-row class="mb-5">
-                        <!--<b-col lg="6">
+                        <b-col lg="6">
                             <div class="catLitterBanner">
                                 <div class="bannerBg">
                                     <b-img src="~assets/images/bg.png" alt="catLitterBg"></b-img>
@@ -16,7 +16,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </b-col>-->
+                        </b-col>
                         <b-col lg="6">
                             <div class="popProduct-noHeading popProduct-noPadding">
                                 <PopularProducts>
@@ -41,7 +41,7 @@
                             </div>
                         </b-col>
                     </b-row>
-                    <!--<b-row>
+                    <b-row>
                         <b-col lg="6">
                             <div class="catLitterBanner">
                                 <div class="bannerBg">
@@ -78,10 +78,10 @@
                                 </PopularProducts>
                             </div>
                         </b-col>
-                    </b-row>-->
+                    </b-row>
                 </b-container>
             </b-tab>
-            <!--<b-tab title="Self-Cleaning Litter Boxes">
+            <b-tab title="Self-Cleaning Litter Boxes">
                 <div class="popProduct-noPadding">
                     <PopularProducts class="selfCleaning">
                         <template slot="popularProduct">
@@ -97,7 +97,7 @@
                         </template>
                     </PopularProducts>
                 </div>
-            </b-tab>-->
+            </b-tab>
         </b-tabs>
     </section>
 </template>
@@ -107,6 +107,8 @@
     export default {
         data(){
             return {
+                tabIndex: 0,
+                tabs: ['#dogs', '#cats'],
                 popularProduct: {
                     slidesToShow: 4,
                     slidesToScroll: 1,
@@ -138,6 +140,9 @@
                     ]
                 },
             }
+        },
+        mounted() {
+            this.tabIndex = this.tabs.findIndex(tab => tab === this.$route.hash)
         },
         computed:{
             ...mapState([

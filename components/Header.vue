@@ -22,13 +22,13 @@
                 <b-navbar-brand to="/"><img src="~assets/images/logo.png" alt="logo"></b-navbar-brand>
                 <b-collapse id="nav-collapse" is-nav>
                     <b-navbar-nav class="me-auto mb-2 mb-lg-0">
-                        <b-nav-item to="litter_sale">
+                        <b-nav-item to="litter">
                             <i class="active">Subscribe</i>
                             cat litter
                         </b-nav-item>
                         <b-nav-item-dropdown>
                             <template #button-content>
-                                <i class="active">Subscribe</i>
+                                <i class="active">Purchase</i>
                                 cat litter
                             </template>
                             <b-dropdown-item to="max_sale">
@@ -50,7 +50,7 @@
                                 Cat litter
                             </b-dropdown-item>
                         </b-nav-item-dropdown>
-                        <b-nav-item href="#">
+                        <b-nav-item to="category">
                             Self-Cleaning Litter Boxes 
                         </b-nav-item>
                     </b-navbar-nav>
@@ -67,7 +67,7 @@
                 <div class="nav-extras">
                     <ul class="menu-icons">
                         <li class="d-none d-lg-block"><a href="#"><font-awesome-icon :icon="['fa', 'search']"/></a></li>
-                        <li class="d-none d-lg-block"><NuxtLink to="dashboard"><font-awesome-icon :icon="['fa', 'user']"/></NuxtLink></li>
+                        <li class="d-none d-md-block"><NuxtLink to="dashboard"><font-awesome-icon :icon="['fa', 'user']"/></NuxtLink></li>
                         <li>
                             <NuxtLink to="cart" class="cart">
                                 <i class="icon">

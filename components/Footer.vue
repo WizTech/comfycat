@@ -25,7 +25,7 @@
                             </ul>
                             <ul class="single-menu">
                                 <li><NuxtLink to="legal">LEGAL</NuxtLink></li>
-                                <li><a href="#">SHIPPING</a></li>
+                                <li><NuxtLink to="shipping">SHIPPING</NuxtLink></li>
                                 <li><NuxtLink to="return">RETURNS</NuxtLink></li>
                             </ul>
                         </div>

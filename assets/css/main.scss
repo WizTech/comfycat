@@ -313,6 +313,7 @@ strong,
     font-size: 1.125rem;
     transition: 0.25s all ease-in;
     margin: 0 auto;
+    text-transform: uppercase;
 }
 
 .main-nav .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
@@ -2902,19 +2903,37 @@ main {
     }
 }
 
-.legalPage .content {
-    p {
-        font-size: 1rem;
-        margin: 0 0 1rem;
-        +h4 {
-            margin-top: 35px;
+.legalPage {
+    .content {
+        p {
+            font-size: 1rem;
+            margin: 0 0 1rem;
+            +h4 {
+                margin-top: 35px;
+            }
+        }
+        ul {
+            list-style: disc;
+            padding-left: 1.25rem;
+            li {
+                font-size: 1rem;
+            }
         }
     }
-    ul {
-        list-style: disc;
-        padding-left: 1.25rem;
-        li {
-            font-size: 1rem;
+    @media (max-width: 991px) {
+        .single_eo {
+            .container {
+                .row {
+                    flex-direction: column-reverse;
+                }
+            }
+            &:nth-child(even) {
+                .container {
+                    .row {
+                        flex-direction: column-reverse;
+                    }
+                }
+            }
         }
     }
 }
@@ -3107,6 +3126,81 @@ main {
     }
 }
 
+.why_comfy.about_community {
+    background-image: url('~assets/images/about_community.png');
+    @media(max-width: 767px) {
+        background-position: left -730px bottom 0;
+    }
+}
+
+.fs-1 {
+    font-size: 1rem !important;
+}
+
+.banner.shippingBanner .banner-bg {
+    bottom: 80px;
+}
+
+.shipping {
+    .table-responsive {
+        padding-right: 2px;
+    }
+    .table {
+        margin: 30px 0;
+        thead {
+            th {
+                background: #FEE7D5;
+                border: 0;
+                font-size: 1rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: #26282A;
+                padding: 21px 30px;
+                &:first-child {
+                    border-top-left-radius: 7px;
+                }
+                &:last-child {
+                    border-top-right-radius: 7px;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    padding: 21px 30px;
+                    border: 0;
+                    box-sizing: border-box;
+                }
+                &:nth-child(odd) {
+                    td {
+                        &:first-child {
+                            border-left: 1px solid #E3EAEC;
+                        }
+                        &:last-child {
+                            border-right: 1px solid #E3EAEC;
+                        }
+                    }
+                }
+                &:nth-child(even) {
+                    td {
+                        background: #fff7f0;
+                    }
+                }
+                &:last-child {
+                    td {
+                        &:first-child {
+                            border-bottom-left-radius: 7px;
+                        }
+                        &:last-child {
+                            border-bottom-right-radius: 7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (min-width: 1590px) {
     .container,
     .container-lg,
@@ -3291,6 +3385,19 @@ main {
         right: 0;
         transform: translateY(-35%);
     }
+    .why_comfy:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) -37.79%, rgba(255, 255, 255, 0) 109.9%), rgba(255, 255, 255, 0.5);
+    }
+    .why_comfy .container {
+        position: relative;
+        z-index: 1;
+    }
     .shipping-zone {
         padding: 30px 0 0;
     }
@@ -3427,15 +3534,6 @@ main {
     }
     .testimonialSlider .slideCard p {
         font-size: 0.875rem
-    }
-    .why_comfy:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) -37.79%, rgba(255, 255, 255, 0) 109.9%), rgba(255, 255, 255, 0.5);
     }
     .why_comfy .container {
         position: relative;
