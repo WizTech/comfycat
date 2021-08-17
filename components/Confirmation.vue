@@ -4,33 +4,28 @@
       <b-row>
         <b-col lg="7" class="order-lg-0 order-1">
           <div class="checkout-main">
+            <div class="content">
+                <h2>Thank You</h2>
+            </div>
             <div class="orderConfirmTitle">
-              <font-awesome-icon :icon="['far', 'check-circle']" class="active mr-3"/>
-              <h4>
-                <span>Order# 1234</span>
-                Thank You For Ordering.
+              <h4 class="text-uppercase">
+                Your Order is booked
               </h4>
             </div>
             <div class="orderConfirmedDesc">
-              <div class="singleDesc">
-                <div class="content">
-                  <h3>Your Order is Confirmed</h3>
-                  <p>We've accepted your order, and we are getting it ready. Come back to this page for updates on your
-                    shipment status.</p>
-                </div>
-              </div>
-              <div class="singleDesc">
-                <b-row align-v="center">
-                  <b-col md="7">
-                    <div class="content">
-                      <h3>Tracking Number</h3>
-                      <p>012543987</p>
-                    </div>
-                  </b-col>
-                  <b-col md="5">
-                    <b-button variant="theme" class="w-100">Track</b-button>
-                  </b-col>
-                </b-row>
+              <div class="content">
+                  <ul class="mb-md-4 mb-3">
+                    <li>Your order is now in production</li>
+                    <li>Estimated shipping time is: <strong>August 10.</strong></li>
+                    <li><strong>1 week before shipping, we will send you an email with a payment request.</strong></li>
+                  </ul>
+                  <p class="fs-1 mb-md-4 mb-2">
+                    We thank you for your interest and welcome you to the Comfycat.com Community and soon, to a life wthout scooping!
+                  </p>
+                  <p class="fs-1">
+                    Kind regards, <br>
+                    The <NuxtLink to="/">www.comfycat.com</NuxtLink> team!
+                  </p>
               </div>
             </div>
             <div class="checkoutTerms">
@@ -51,7 +46,7 @@
                   <div class="forFree mt-4" v-for="product in cartData">
                     <div class="freeItem bg-white">
                       <div class="freeImg">
-                        <b-img src="~assets/images/product1.png" fluid alt="product"></b-img>
+                        <b-img :src="require(`@/assets/images/${product.images}`)" fluid alt="product"></b-img>
                       </div>
                       <div class="freeDesc cartCard">
                         <div class="summaryCart text-left">
@@ -65,7 +60,19 @@
                       </div>
                     </div>
                   </div>
-                  <div class="summary mt-5">
+                  <div class="promoCode">
+                      <b-form>
+                          <b-row>
+                              <b-col lg="8" cols="8" class="pr-0">
+                                  <b-form-input placeholder="Discount code"></b-form-input>
+                              </b-col>
+                              <b-col lg="4" cols="4">
+                                  <b-button variant="theme" disabled class="btn-med no-line mt-0 w-100">apply</b-button>
+                              </b-col>
+                          </b-row>
+                      </b-form>
+                  </div>
+                  <div class="summary">
                     <div class="summaryTotals m-0">
                       <div class="singleTotal">
                         <p>Subtotal</p>

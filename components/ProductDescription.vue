@@ -176,8 +176,11 @@
           </div>
         </div>
       </div>
-      <div class="cartRecommended d-none">
-        <h5>RECOMMENDED WITH:</h5>
+      <div class="cartRecommended">
+        <h5>INCLUDED FOR FREE:</h5>
+        <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
+          Add for free
+        </b-form-checkbox>
         <div class="forFree">
           <div class="freeItem">
             <div class="freeImg">
@@ -185,7 +188,7 @@
             </div>
             <div class="freeDesc">
               <p>{{recommendProduct.name}}</p>
-              <b-button @click="addItem(recommendProduct.id)" variant="outline-theme" class="btn-med w-100">${{recommendProduct.price}} – ADD TO CART</b-button>
+              <!-- <b-button @click="addItem(recommendProduct.id)" variant="outline-theme" class="btn-med w-100">Free</b-button> -->
             </div>
           </div>
         </div>

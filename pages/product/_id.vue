@@ -58,37 +58,10 @@
                     </div>
                     <div class="singlePopProd">
                         <div class="singlePopImg">
-                            <b-img src="~assets/images/eo3_1.png" fluid alt="eo14"></b-img>
-                        </div>
-                        <div class="singlePopDesc">
-                            <h2>COMFYCAT ZEN SELF-CLEANING LITTER BOX (pink)</h2>
-                            <b-button variant="theme" class="no-line" to="product_detail"><span>25$</span> VIEW NOW</b-button>
-                        </div>
-                    </div>
-                    <div class="singlePopProd">
-                        <div class="singlePopImg">
-                            <b-img src="~assets/images/eo22.png" fluid alt="eo14"></b-img>
-                        </div>
-                        <div class="singlePopDesc">
-                            <h2>COMFYCAT ZEN SELF-CLEANING LITTER BOX (blue)</h2>
-                            <b-button variant="theme" class="no-line" to="product_detail"><span>25$</span> VIEW NOW</b-button>
-                        </div>
-                    </div>
-                    <div class="singlePopProd">
-                        <div class="singlePopImg">
                             <b-img src="~assets/images/eo23.png" fluid alt="eo14"></b-img>
                         </div>
                         <div class="singlePopDesc">
                             <h2>COMFYCAT MAX SELF-CLEANING LITTER BOX (white)</h2>
-                            <b-button variant="theme" class="no-line" to="product_detail"><span>25$</span> VIEW NOW</b-button>
-                        </div>
-                    </div>
-                    <div class="singlePopProd">
-                        <div class="singlePopImg">
-                            <b-img src="~assets/images/product1.png" fluid alt="eo14"></b-img>
-                        </div>
-                        <div class="singlePopDesc">
-                            <h2>100% Natural Premium Clumping Litter</h2>
                             <b-button variant="theme" class="no-line" to="product_detail"><span>25$</span> VIEW NOW</b-button>
                         </div>
                     </div>

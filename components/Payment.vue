@@ -149,7 +149,7 @@
                                       <div class="forFree mt-4" v-for="product in cartData">
                                           <div class="freeItem bg-white">
                                               <div class="freeImg">
-                                                  <b-img src="~assets/images/product1.png" fluid alt="product"></b-img>
+                                                  <b-img :src="require(`@/assets/images/${product.images}`)" fluid alt="product"></b-img>
                                               </div>
                                               <div class="freeDesc cartCard">
                                                   <div class="summaryCart text-left">
