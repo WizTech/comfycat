@@ -17,7 +17,7 @@
                                 </div>
                             </div>
                         </b-col>-->
-                        <b-col lg="6">
+                        <b-col cols="12">
                             <div class="popProduct-noHeading popProduct-noPadding">
                                 <PopularProducts>
                                     <template slot="popularProduct">
