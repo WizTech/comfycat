@@ -13,8 +13,10 @@
             <b-container fluid="lg">
                 <b-row>
                     <b-col lg="6">
+                        <div class="productSlider sliderOnly">
+                            <slot name="sliderSection"></slot>                            
+                        </div>
                         <div class="productSlider">
-                            <slot name="sliderSection"></slot>
                             <div class="productSlider-extra">
                                 <div class="sliderThumbnail play-icon">
                                     <a href="#">
