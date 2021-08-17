@@ -31,7 +31,7 @@
                                 <div class="dropdown-img">
                                     <img src="~assets/images/cat_litter3.png" alt="Cat litter">
                                 </div>
-                                Cat litter
+                                100% Natural Corn & Tofu Litter
                             </b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item-dropdown>
@@ -43,7 +43,7 @@
                                 <div class="dropdown-img">
                                     <img src="~assets/images/cat_litter3.png" alt="Cat litter">
                                 </div>
-                                Cat litter
+                                100% Natural Corn & Tofu Litter
                             </b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item to="category">

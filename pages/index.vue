@@ -14,7 +14,7 @@
                       <strong class="d-block">100% Natural Premium Clumping Litter.</strong>
                       Dust free. Clumps in seconds. Flushable. Great odor control. Absorbs 3x better than Clay.  Delivered to your doorstep.
                   </p>
-                  <b-button variant="theme">SUBSCRIBE NOW</b-button>
+                  <b-button variant="theme" to="litter">SUBSCRIBE NOW</b-button>
                 </div>
                 <div class="ingrdient">
                     <p>Only Natural Ingredients. Better for Kitty. Better for the Environment:</p>
@@ -47,7 +47,38 @@
     <CategoryHalf/>
     <Slider></Slider>
     <WhyComfy/>
-    <PerfectComfy/>
+    <section class="g_section comfy-kit">
+        <b-container>
+            <b-row>
+                <b-col cols="12">
+                    <div class="content text-center">
+                        <h2>KITTY Products</h2>
+                    </div>
+                </b-col>
+            </b-row>
+            <b-row>
+                <b-col lg="6" class="d-none d-lg-block">
+                    <b-img src="~assets/images/coming-soon2.png" fluid alt="coming-soon"></b-img>
+                </b-col>
+                <b-col lg="6">
+                    <div class="kits">
+                        <div class="single-kit">
+                            <div class="kit-img">
+                                <b-img src="~assets/images/c_kitty1.png" fluid alt="c_kitty1"></b-img>
+                            </div>
+                            <b-button variant="theme" class="mx-auto w-100" to="product">Shop Automatic Litter Boxes</b-button>
+                        </div>
+                        <div class="single-kit">
+                            <div class="kit-img">
+                                <b-img src="~assets/images/c_kitty2.png" fluid alt="c_kitty2"></b-img>
+                            </div>
+                            <b-button variant="theme" class="mx-auto w-100" to="litter">SHOP 100% NATURAL LITTER</b-button>
+                        </div>
+                    </div>
+                </b-col>
+            </b-row>
+        </b-container>
+    </section>
   </main>
 </template>
 

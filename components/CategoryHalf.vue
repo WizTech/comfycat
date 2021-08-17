@@ -7,7 +7,7 @@
                     <p>
                         100% Natural Premium Clumping Litter. Dust free, Clumps in seconds, Flushable.  Great odor control. Absorbs moisture 3x better than Clay.
                     </p>
-                  <b-button variant="theme" class="mx-auto">subscribe now</b-button>
+                  <b-button variant="theme" class="mx-auto" to="litter">subscribe now</b-button>
                 </div>
                 <b-img src="~assets/images/product1.png" fluid alt="product1"></b-img>
             </div>

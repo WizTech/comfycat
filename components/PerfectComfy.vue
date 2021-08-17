@@ -21,13 +21,13 @@
                             <div class="kit-img">
                                 <b-img src="~assets/images/c_kitty1.png" fluid alt="c_kitty1"></b-img>
                             </div>
-                            <button class="btn btn-theme mx-auto w-100">Shop Automatic Litter Boxes</button>
+                            <b-button variant="theme" class="mx-auto w-100" to="product">Shop Automatic Litter Boxes</b-button>
                         </div>
                         <div class="single-kit">
                             <div class="kit-img">
                                 <b-img src="~assets/images/c_kitty2.png" fluid alt="c_kitty2"></b-img>
                             </div>
-                            <button class="btn btn-theme mx-auto w-100">SHOP 100% NATURAL LITTER</button>
+                            <b-button variant="theme" class="mx-auto w-100" to="litter">SHOP 100% NATURAL LITTER</b-button>
                         </div>
                     </div>
                 </b-col>
