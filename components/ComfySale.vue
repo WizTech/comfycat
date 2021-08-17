@@ -4,12 +4,12 @@
             <b-row class="align-items-center">
                 <b-col lg="6">
                     <div class="sell_image text-center">
-                        <b-img src="~assets/images/product2.png" fluid alt="product2"></b-img>
+                        <b-img src="~assets/images/product3.png" fluid alt="product2"></b-img>
                     </div>
                 </b-col>
                 <b-col lg="6">
                     <div class="sell_desc" v-bind:class="{ sellV2: version_v2}">
-                        <h2>COMFYCAT ZEN SELF-CLEANING LITTER BOX</h2>
+                        <h2 class="text-uppercase">ComfyCat Max Self-Cleaning Litter Box </h2>
                         <div class="sell_price" v-if="!this.version_v1">
                             <h2>$399</h2>
                             <h4 class="cut-price active"><strike>$499 USD</strike> (20% OFF, VERSION 2.0 LAUNCH SPECIAL)</h4>

@@ -3,7 +3,7 @@
         <InnerBanner/>
         <Shippingzone/>
         <ComfySale :version="version"/>
-        <EvenOddDescription />
+        <EvenOddDescriptionMax />
         <ProductComments />
         <ComfySale :version="version" :withArrows="withArrows"/>
         <CtaModel></CtaModel>
