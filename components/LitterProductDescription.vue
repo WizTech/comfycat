@@ -183,7 +183,7 @@
         <div class="productSelected">
           <div class="singleProduct">
             <div class="singleImage">
-              <b-img src="~assets/images/eo14.png"  fluid alt="eo14"></b-img>
+              <b-img src="~assets/images/litter3.png"  fluid alt="eo14"></b-img>
             </div>
             <div class="singleDesc">
               <b-button variant="transparent" class="discardProduct">

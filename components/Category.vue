@@ -2,9 +2,9 @@
     <section class="g_section-half">
         <b-tabs class="sellProductTabs categoryPg">
             <b-tab title="Self-Cleaning Litter Boxes" active>
-                <b-container>
+                <!-- <b-container>
                     <b-row class="mb-5">
-                        <!--<b-col lg="6">
+                        <b-col lg="6">
                             <div class="catLitterBanner">
                                 <div class="bannerBg">
                                     <b-img src="~assets/images/bg.png" alt="catLitterBg"></b-img>
@@ -16,7 +16,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </b-col>-->
+                        </b-col>
                         <b-col cols="12">
                             <div class="popProduct-noHeading popProduct-noPadding">
                                 <PopularProducts>
@@ -41,7 +41,7 @@
                             </div>
                         </b-col>
                     </b-row>
-                    <!--<b-row>
+                    <b-row>
                         <b-col lg="6">
                             <div class="catLitterBanner">
                                 <div class="bannerBg">
@@ -78,8 +78,28 @@
                                 </PopularProducts>
                             </div>
                         </b-col>
-                    </b-row>-->
-                </b-container>
+                    </b-row>
+                </b-container> -->
+                <div class="popProduct-noHeading popProduct-noPadding">
+                    <PopularProducts>
+                        <template slot="popularProduct">
+                            <slick :options="popularProduct">
+                                <div class="singlePopProd"
+                                        v-for="product in products"
+                                    :key="product.id"
+                                >
+                                    <div class="singlePopImg">
+                                        <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
+                                    </div>
+                                    <div class="singlePopDesc">
+                                        <h2>{{product.name}}</h2>
+                                        <b-button variant="theme" class="no-line" :to="`/product/${product.slug}`"><span>${{product.price}}</span> VIEW NOW</b-button>
+                                    </div>
+                                </div>
+                            </slick>
+                        </template>
+                    </PopularProducts>
+                </div>
             </b-tab>
             <!--<b-tab title="Self-Cleaning Litter Boxes">
                 <div class="popProduct-noPadding">

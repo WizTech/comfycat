@@ -45,7 +45,7 @@
               <div class="productSelected">
                 <div class="singleProduct" v-for="product in cartData" :key=product.id>
                   <div class="singleImage">
-                    <b-img src="~assets/images/product1.png" fluid alt="product1"></b-img>
+                    <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
                   </div>
                   <div class="singleDesc">
                     <b-button variant="transparent" class="discardProduct" @click="removeItem(product.id)">
@@ -138,7 +138,7 @@
                       </div>
                     </div>
                     <p class="text-center bold text-uppercase small">
-                      <NuxtLink to="/">Continue to shopping</NuxtLink>
+                      <NuxtLink to="/product">Continue to shopping</NuxtLink>
                     </p>
                     <b-button variant="theme" class="w-100 m-0" to="checkout">checkout now</b-button>
                   </div>
