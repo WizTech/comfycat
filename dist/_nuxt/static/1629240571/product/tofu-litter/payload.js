@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/product/tofu-litter", {data:[{}],fetch:{},mutations:[]});
