@@ -179,7 +179,7 @@
       <div class="cartRecommended">
         <h5>INCLUDED FOR FREE:</h5>
         <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
-          Add for free
+          <small>Subscription to Litter automatically activated but users get 2 Free months of the subscription</small>
         </b-form-checkbox>
         <div class="forFree">
           <div class="freeItem">
@@ -194,7 +194,7 @@
         </div>
       </div>
       <div class="addCartSection footer">
-        <p class="text-center bold">SUBTOTAL: ${{subTotal}} <a href="javascript:void(0)" to="cart" class="active ml-4">VIEW CART</a></p>
+        <p class="text-center bold">SUBTOTAL: ${{subTotal}} <NuxtLink to="/cart" class="active ml-4">VIEW CART</NuxtLink></p>
         <b-button variant="theme" class="w-100" :to="'/checkout'">checkout now</b-button>
       </div>
     </b-modal>

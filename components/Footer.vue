@@ -15,18 +15,18 @@
                     <b-col lg="5" class="my-lg-0 my-5">
                         <div class="footer-menus">
                             <ul class="single-menu">
-                                <li><NuxtLink to="product">Cat Litter Subscription</NuxtLink></li>
-                                <li><NuxtLink to="product">Self-Cleaning Litter Boxes</NuxtLink></li>
+                                <li><NuxtLink to="/litter" @click="setBuyType('subscribe')">Cat Litter Subscription</NuxtLink></li>
+                                <li><NuxtLink to="/product">Self-Cleaning Litter Boxes</NuxtLink></li>
                             </ul>
                             <ul class="single-menu">
-                                <li><NuxtLink to="about">ABOUT US</NuxtLink></li>
-                                <li><NuxtLink to="contact_us">contact US</NuxtLink></li>
-                                <li><NuxtLink to="support">SUPPORT</NuxtLink></li>
+                                <li><NuxtLink to="/about">ABOUT US</NuxtLink></li>
+                                <li><NuxtLink to="/contact_us">contact US</NuxtLink></li>
+                                <li><NuxtLink to="/support">SUPPORT</NuxtLink></li>
                             </ul>
                             <ul class="single-menu">
-                                <li><NuxtLink to="legal">LEGAL</NuxtLink></li>
-                                <li><NuxtLink to="shipping">SHIPPING</NuxtLink></li>
-                                <li><NuxtLink to="return">RETURNS</NuxtLink></li>
+                                <li><NuxtLink to="/legal">LEGAL</NuxtLink></li>
+                                <li><NuxtLink to="/shipping">SHIPPING</NuxtLink></li>
+                                <li><NuxtLink to="/return">RETURNS</NuxtLink></li>
                             </ul>
                         </div>
                     </b-col>
@@ -54,8 +54,20 @@
 </template>
 
 <script>
+    import {mapState, mapMutations} from 'vuex'
     export default {
         
+        methods:{
+            ...mapMutations([
+                'setBuyType'
+            ]),
+        },
+        computed: {
+            ...mapState([
+                'buyType'
+            ])
+
+        }
     }
 </script>
 

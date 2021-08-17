@@ -17,7 +17,7 @@
                                 </div>
                             </div>
                         </b-col>-->
-                        <b-col lg="6">
+                        <b-col cols="12">
                             <div class="popProduct-noHeading popProduct-noPadding">
                                 <PopularProducts>
                                     <template slot="popularProduct">
@@ -108,8 +108,6 @@
     export default {
         data(){
             return {
-                tabIndex: 0,
-                tabs: ['#dogs', '#cats'],
                 popularProduct: {
                     slidesToShow: 4,
                     slidesToScroll: 1,
@@ -141,9 +139,6 @@
                     ]
                 },
             }
-        },
-        mounted() {
-            this.tabIndex = this.tabs.findIndex(tab => tab === this.$route.hash)
         },
         computed:{
             ...mapState([
