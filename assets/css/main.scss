@@ -1673,6 +1673,14 @@ footer .cpr p {
     @media (max-width: 991px) {
         padding: 50px 0;
     }
+    &.no-bg {
+        .sliderThumbnail .slick-slide .imgContainer {
+            background: transparent;
+        }
+        .sliderProduct .imgContainer {
+            background: transparent;
+        }
+    }
 }
 
 .forFree {

@@ -13,7 +13,7 @@
             <b-container>
                 <b-row>
                     <b-col lg="6">
-                        <div class="productSlider">
+                        <div class="productSlider no-bg">
                             <slot name="sliderSection"></slot>
                         </div>
                     </b-col>

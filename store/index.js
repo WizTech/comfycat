@@ -27,7 +27,7 @@ export const state = () => ({
             qty: 0,
             slug: "comfycat-max-self-cleaning-litter-box",
             category: "max",
-            images: "eo3_1.png"
+            images: "selfClean.png"
         }]
     }
 

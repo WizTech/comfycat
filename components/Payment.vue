@@ -31,7 +31,7 @@
                                                 </div>
                                             </div>
 
-                                            <a href="javascript:void(0)" to="checkout" class="active">Change</a>
+                                            <NuxtLink to="checkout" class="active">Change</NuxtLink>
                                         </div>
                                         <div class="infoSingle">
                                             <div class="infoDetail">
@@ -40,7 +40,7 @@
                                                     <p>{{billingData.address}}</p>
                                                 </div>
                                             </div>
-                                            <a href="javascript:void(0)" class="active">Change</a>
+                                            <NuxtLink to="checkout" class="active">Change</NuxtLink>
                                         </div>
                                         <div class="infoSingle">
                                             <div class="infoDetail">
@@ -49,11 +49,11 @@
                                                     <p>{{billingData.shipping_method}}</p>
                                                 </div>
                                             </div>
-                                            <a href="javascript:void(0)" class="active">Change</a>
+                                            <NuxtLink to="checkout" class="active">Change</NuxtLink>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="singleCheckout dashboardForm">
+                                <div class="singleCheckout dashboardForm d-none">
                                     <h4 class="mb-2">Payment</h4>
                                     <p>All transactions are secure and encrypted</p>
                                     <div class="getInfo">
@@ -127,7 +127,7 @@
                                 </div>
                                 <b-row class="align-items-center">
                                     <b-col md="6">
-                                        <b-button variant="theme" class="w-100" to="confirmation">pay now</b-button>
+                                        <b-button variant="theme" class="w-100" to="confirmation">PLACE ORDER</b-button>
                                     </b-col>
                                 </b-row>
                             </b-form>

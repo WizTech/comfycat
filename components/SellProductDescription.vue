@@ -77,7 +77,7 @@
                                 <div class="galleryVideo">
                                     <div class="with-video">
                                         <a href="javascript:void(0);" class="video-play"><font-awesome-icon :icon="['fa', 'play']"/></a>
-                                        <b-img src="~assets/images/banner_1.png" fluid alt="banner_1"></b-img>
+                                        <b-img src="~assets/images/selfClean1.png" fluid alt="selfClean1"></b-img>
                                     </div>
                                 </div>
                                 <div class="galleryPhotos slick-round-arrows">

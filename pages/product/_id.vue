@@ -4,20 +4,20 @@
             <template slot="sliderSection">
                 <div class="sliderThumbnail">
                     <slick :options="sliderNav" ref="sliderSecondary" @beforeChange="syncSliders">
-                        <div class="imgContainer"><b-img fluid src="~/assets/images/eo14.png"></b-img></div>
+                        <div class="imgContainer"><b-img fluid src="~/assets/images/banner_2.png"></b-img></div>
                         <div class="imgContainer"><b-img fluid src="~/assets/images/eo16.png"></b-img></div>
                         <div class="imgContainer"><b-img fluid src="~/assets/images/product3.png"></b-img></div>
-                        <div class="imgContainer"><b-img fluid src="~/assets/images/eo12.png"></b-img></div>
+                        <div class="imgContainer"><b-img fluid src="~/assets/images/selfClean/photo4.png"></b-img></div>
                         <div class="imgContainer"><b-img fluid src="~/assets/images/eo17.png"></b-img></div>
                         <div class="imgContainer"><b-img fluid src="~/assets/images/eo16.png"></b-img></div>
                     </slick>
                 </div>
                 <div class="sliderProduct">
                     <slick :options="sliderFor" ref="sliderPrimary" @beforeChange="syncSliders">
-                        <div class="imgContainer"><b-img fluid src="~/assets/images/eo14.png"></b-img></div>
+                        <div class="imgContainer"><b-img fluid src="~/assets/images/banner_2.png"></b-img></div>
                         <div class="imgContainer"><b-img fluid src="~/assets/images/eo16.png"></b-img></div>
                         <div class="imgContainer"><b-img fluid src="~/assets/images/product3.png"></b-img></div>
-                        <div class="imgContainer"><b-img fluid src="~/assets/images/eo12.png"></b-img></div>
+                        <div class="imgContainer"><b-img fluid src="~/assets/images/selfClean/photo4.png"></b-img></div>
                         <div class="imgContainer"><b-img fluid src="~/assets/images/eo17.png"></b-img></div>
                         <div class="imgContainer"><b-img fluid src="~/assets/images/eo16.png"></b-img></div>
                     </slick>
@@ -27,16 +27,20 @@
         <SellProductDescription :product="product">
             <template slot="galleryPhotos">
                 <slick :options="galleryPhotos">
-                    <div class="imgContainer"><b-img src="~assets/images/photo1.png" fluid alt="photo1"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo2.png" fluid alt="photo2"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo3.png" fluid alt="photo3"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo4.png" fluid alt="photo4"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo5.png" fluid alt="photo5"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo6.png" fluid alt="photo6"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo7.png" fluid alt="photo7"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo8.png" fluid alt="photo8"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo9.png" fluid alt="photo9"></b-img></div>
-                    <div class="imgContainer"><b-img src="~assets/images/photo10.png" fluid alt="photo10"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo1.png" fluid alt="photo1"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo2.png" fluid alt="photo2"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo3.png" fluid alt="photo3"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo4.png" fluid alt="photo4"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo5.png" fluid alt="photo5"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo6.png" fluid alt="photo6"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo7.png" fluid alt="photo7"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo8.png" fluid alt="photo8"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo9.png" fluid alt="photo9"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo10.png" fluid alt="photo10"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo5-1.png" fluid alt="photo10"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo6-1.png" fluid alt="photo10"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo7-1.png" fluid alt="photo10"></b-img></div>
+                    <div class="imgContainer"><b-img src="~assets/images/selfClean/photo8-1.png" fluid alt="photo10"></b-img></div>
                 </slick>
             </template>
         </SellProductDescription>
