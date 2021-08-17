@@ -16,6 +16,9 @@ export default {
         ]
     },
 
+    googleAnalytics: {
+      id: 'UA-205130555-1'
+    },
     target: 'static',
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
@@ -36,7 +39,8 @@ export default {
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         '@nuxtjs/style-resources',
-        '@nuxtjs/fontawesome'
+        '@nuxtjs/fontawesome',
+        '@nuxtjs/google-analytics'
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules

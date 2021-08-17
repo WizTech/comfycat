@@ -78,7 +78,7 @@
                             </div>
                         </b-col>
                         <b-col lg="7">
-                            <b-button variant="theme" class="w-100" v-b-modal.addToCart>
+                            <b-button variant="theme" class="w-100" @click="addGoal"  v-b-modal.addToCart>
                                 add to cart
                             </b-button>
                         </b-col>
@@ -247,6 +247,11 @@
 <script>
     import {mapGetters, mapState} from 'vuex'
     export default {
+        methods:{
+          addGoal(){
+              this.$ga.event('Button', 'Click', 'Add to Cart Button', 1)
+          }
+        },
         computed: {
             tabIndex(){
               return this.buyType == 'subscribe' ? 1 : 0;
