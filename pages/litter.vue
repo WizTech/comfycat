@@ -134,6 +134,11 @@ import { mapState } from 'vuex';
             ...mapState([
                 'products'
             ])
+        },
+        head() {
+            return {
+            title: "Comfycat | Litter",
+            }
         }
     }
 </script>
