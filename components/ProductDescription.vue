@@ -106,7 +106,7 @@
         </b-row>
         <b-row>
           <b-col lg="12" class="pt-md-2">
-            <b-button @click="addItem(product.id)" variant="theme" class="w-100" v-b-modal.addToCart>add to cart
+            <b-button @click="addItem(product.id);addGoal()" variant="theme" class="w-100"   v-b-modal.addToCart>add to cart
             </b-button>
           </b-col>
         </b-row>
@@ -206,6 +206,9 @@
 
     export default {
         methods: {
+            addGoal() {
+                this.$ga.event('Button', 'Click', 'Add to Cart Button', Date.now())
+            },
             ...mapMutations(['addItem', 'removeItem'])
         },
         computed: {

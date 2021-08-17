@@ -168,7 +168,7 @@
             </div>
             <div class="freeDesc">
                 <p>Comfycat Zen Self-Cleaning Litter Box</p>
-                <b-button variant="outline-theme" size="sm">$399 – ADD TO CART</b-button>
+                <b-button variant="outline-theme" size="sm" @click="addGoal()">$399 – ADD TO CART</b-button>
             </div>
             </div>
         </b-col>
@@ -222,7 +222,7 @@
           </div>
         </div>
       </div>
-      <div class="cartRecommended">
+      <div class="cartRecommended d-none">
         <h5>RECOMMENDED WITH:</h5>
         <div class="forFree">
           <div class="freeItem">
@@ -249,7 +249,7 @@
     export default {
         methods:{
           addGoal(){
-              this.$ga.event('Button', 'Click', 'Add to Cart Button', 1)
+              this.$ga.event('Button', 'Click', 'Add to Cart Button', Date.now())
           }
         },
         computed: {

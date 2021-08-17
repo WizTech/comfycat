@@ -127,7 +127,7 @@
                                 </div>
                                 <b-row class="align-items-center">
                                     <b-col md="6">
-                                        <b-button variant="theme" class="w-100" to="confirmation">PLACE ORDER</b-button>
+                                        <b-button variant="theme" class="w-100" @click="addGoal()" to="confirmation">PLACE ORDER</b-button>
                                     </b-col>
                                 </b-row>
                             </b-form>
@@ -214,6 +214,10 @@
             }
         },
         methods: {
+            addGoal(){
+                this.$ga.event('Button', 'Click', 'Thank you for your order page', Date.now())
+
+            },
             checkPaymenttype(e){
                 if(e == "credit card"){
                     this.payment_CC_form = true,
