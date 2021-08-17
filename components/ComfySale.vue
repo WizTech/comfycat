@@ -81,7 +81,7 @@
                                 </div>
                                 <b-row class="ready-btn">
                                     <b-col md="6" class="mb-md-0 mb-3">
-                                        <b-button variant="theme" class="w-100" to="cart">I AM READY: ADD TO CART</b-button>
+                                        <b-button variant="theme" class="w-100" to="cart" >I AM READY: ADD TO CART</b-button>
                                     </b-col>
                                     <b-col md="6">
                                         <b-button variant="theme" class="w-100">
@@ -118,6 +118,11 @@
                 showHideArrows: this.withArrows,
             }
         },
+        methods: {
+            addGoal() {
+                this.$ga.event('Button', 'Click', 'Add to Cart Button', Date.now())
+            }
+        }
     }
 </script>
 
