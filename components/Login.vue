@@ -14,10 +14,10 @@
                             <b-form-input type="password" placeholder="Password"></b-form-input>
                         </div>
                         <div class="text-center">
-                            <b-button variant="theme" class="mx-auto" to="dashboard">log in</b-button>
+                            <b-button variant="theme" class="mx-auto" to="/dashboard">log in</b-button>
                         </div>
                         <div class="text-center mt-4">
-                            <p class="m-0">Don’t have an account? <NuxtLink  to="signup">Create account</NuxtLink></p>
+                            <p class="m-0">Don’t have an account? <NuxtLink  to="/signup">Create account</NuxtLink></p>
                             <p class="m-0"><a href="#">Forgot password?</a></p>
                         </div>
                     </b-form>

@@ -1437,6 +1437,11 @@ footer .cpr p {
                 }
             }
         }
+        .forFree .freeItem .freeDesc {
+            p {
+                margin: 0 0 10px;
+            }
+        }
     }
     @media (min-width: 767px) {
         &.seller {
@@ -1526,10 +1531,12 @@ footer .cpr p {
             }
         }
         &.slick-prev {
-            top: -15px;
+            top: -22px;
+            padding-top: 0;
         }
         &.slick-next {
-            top: calc(100% + 15px);
+            top: calc(100% + 22px);
+            padding-bottom: 0;
         }
         &:before {
             content: none;
@@ -3084,7 +3091,8 @@ main {
             margin: 0 -7px;
         }
     }
-    label.btn {
+    .btn {
+        display: inline-block;
         width: auto;
         padding: 0.61rem 0.875rem;
         line-height: normal;

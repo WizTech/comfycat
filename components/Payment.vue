@@ -5,8 +5,8 @@
                 <b-row>
                     <b-breadcrumb class="m-0">
                         <b-breadcrumb-item to="/">Premium Clumping Litter </b-breadcrumb-item>
-                        <b-breadcrumb-item to="cart">Cart</b-breadcrumb-item>
-                        <b-breadcrumb-item to="checkout">Checkout</b-breadcrumb-item>
+                        <b-breadcrumb-item to="/cart">Cart</b-breadcrumb-item>
+                        <b-breadcrumb-item to="/checkout">Checkout</b-breadcrumb-item>
                         <b-breadcrumb-item active>Payment</b-breadcrumb-item>
                     </b-breadcrumb>
                 </b-row>
@@ -31,7 +31,7 @@
                                                 </div>
                                             </div>
 
-                                            <NuxtLink to="checkout" class="active">Change</NuxtLink>
+                                            <NuxtLink to="/checkout" class="active">Change</NuxtLink>
                                         </div>
                                         <div class="infoSingle">
                                             <div class="infoDetail">
@@ -40,7 +40,7 @@
                                                     <p>{{billingData.address}}</p>
                                                 </div>
                                             </div>
-                                            <NuxtLink to="checkout" class="active">Change</NuxtLink>
+                                            <NuxtLink to="/checkout" class="active">Change</NuxtLink>
                                         </div>
                                         <div class="infoSingle">
                                             <div class="infoDetail">
@@ -49,7 +49,7 @@
                                                     <p>{{billingData.shipping_method}}</p>
                                                 </div>
                                             </div>
-                                            <NuxtLink to="checkout" class="active">Change</NuxtLink>
+                                            <NuxtLink to="/checkout" class="active">Change</NuxtLink>
                                         </div>
                                     </div>
                                 </div>

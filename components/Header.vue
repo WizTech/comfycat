@@ -27,7 +27,7 @@
                                 <i class="active">Subscribe</i>
                                 cat litter
                             </template>
-                            <b-dropdown-item to="litter" @click="setBuyType('subscribe')">
+                            <b-dropdown-item to="/litter" @click="setBuyType('subscribe')">
                                 <div class="dropdown-img">
                                     <img src="~assets/images/cat_litter3.png" alt="Cat litter">
                                 </div>
@@ -39,14 +39,14 @@
                                 <i class="active">Purchase</i>
                                 cat litter
                             </template>
-                            <b-dropdown-item to="litter" @click="setBuyType('purchase')">
+                            <b-dropdown-item to="/litter" @click="setBuyType('purchase')">
                                 <div class="dropdown-img">
                                     <img src="~assets/images/cat_litter3.png" alt="Cat litter">
                                 </div>
                                 100% Natural Corn & Tofu Litter
                             </b-dropdown-item>
                         </b-nav-item-dropdown>
-                        <b-nav-item to="category">
+                        <b-nav-item to="/category">
                             Self-Cleaning Litter Boxes 
                         </b-nav-item>
                     </b-navbar-nav>
@@ -55,7 +55,7 @@
                             <a href=""><font-awesome-icon :icon="['fa', 'search']"/></a>
                         </div>
                         <div class="single-profile-icon">
-                            <a href=""><font-awesome-icon :icon="['fa', 'user']"/></a>
+                            <NuxtLink to="/dashboard"><font-awesome-icon :icon="['fa', 'user']"/></NuxtLink>
                         </div>
                     </div>
                 </b-collapse>
@@ -63,9 +63,9 @@
                 <div class="nav-extras">
                     <ul class="menu-icons">
                         <li class="d-none d-lg-block"><a href="#"><font-awesome-icon :icon="['fa', 'search']"/></a></li>
-                        <li class="d-none d-md-block"><NuxtLink to="dashboard"><font-awesome-icon :icon="['fa', 'user']"/></NuxtLink></li>
+                        <li class="d-none d-md-block"><NuxtLink to="/dashboard"><font-awesome-icon :icon="['fa', 'user']"/></NuxtLink></li>
                         <li>
-                            <NuxtLink to="cart" class="cart">
+                            <NuxtLink to="/cart" class="cart">
                                 <i class="icon">
                                     <img src="~assets/images/box.png" alt="box">
                                 </i>

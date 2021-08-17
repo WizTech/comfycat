@@ -49,7 +49,7 @@
                             </b-form-group>
                         </b-col>
                         <b-col cols="12" class="radio-pill mb-md-4 mb-3">
-                            <b-form-radio name="subscribe" value="Subscribe and Save 20%" button button-variant="outline-gray">Subscribe and Save 20%</b-form-radio>
+                            <b-button variant="outline-gray" to="/litter"  @click="setBuyType('subscribe')">Subscribe and Save 20%</b-button>
                         </b-col>
                         <b-col cols="12">
                             <p class="mb-md-4 mb-3">Order ships in the next 24 hours. <strong>Free shipping.</strong></p>
@@ -156,7 +156,7 @@
             </b-tab>
         </b-tabs>
     </div>
-    <div class="forFree d-none">
+    <div class="forFree">
       <b-row>
         <b-col cols="12">
             <p>RECOMMENDED WITH:</p>
@@ -164,11 +164,11 @@
         <b-col lg="9">
             <div class="freeItem">
             <div class="freeImg">
-                <b-img src="~assets/images/litterRecommend.png" fluid alt="litterRecommend"></b-img>
+                <b-img src="~assets/images/selfClean.png" fluid alt="litterRecommend"></b-img>
             </div>
             <div class="freeDesc">
-                <p>Comfycat Zen Self-Cleaning Litter Box</p>
-                <b-button variant="outline-theme" size="sm" @click="addGoal()">$399 – ADD TO CART</b-button>
+                <p>Comfycat Max Self-Cleaning Litter Box</p>
+                <b-button variant="outline-theme" size="sm" @click="addGoal()">$499 – ADD TO CART</b-button>
             </div>
             </div>
         </b-col>
@@ -237,7 +237,7 @@
         </div>
       </div>
       <div class="addCartSection footer">
-        <p class="text-center bold">SUBTOTAL: $50 <a href="javascript:void(0)" to="cart" class="active ml-4">VIEW CART</a></p>
+        <p class="text-center bold">SUBTOTAL: $50 <NuxtLink to="cart" class="active ml-4">VIEW CART</NuxtLink></p>
         <b-button variant="theme" class="w-100" :to="'/checkout'">checkout now</b-button>
       </div>
     </b-modal>
@@ -245,12 +245,15 @@
 </template>
 
 <script>
-    import {mapGetters, mapState} from 'vuex'
+    import {mapGetters, mapState, mapMutations} from 'vuex'
     export default {
         methods:{
           addGoal(){
               this.$ga.event('Button', 'Click', 'Add to Cart Button', Date.now())
-          }
+          },
+          ...mapMutations([
+              'setBuyType'
+          ]),
         },
         computed: {
             tabIndex(){

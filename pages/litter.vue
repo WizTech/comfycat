@@ -35,22 +35,17 @@
         <PopularProducts>
             <template slot="popularProduct">
                 <slick :options="popularProduct">
-                    <div class="singlePopProd">
+                    <div class="singlePopProd"
+                            v-for="product in products"
+                        :key="product.id"
+
+                    >
                         <div class="singlePopImg">
-                            <b-img src="~assets/images/product1.png" fluid alt="eo14"></b-img>
+                            <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
                         </div>
                         <div class="singlePopDesc">
-                            <h2>100% Natural Premium Clumping Litter</h2>
-                            <b-button variant="theme" class="no-line" to="product_detail"><span>25$</span> VIEW NOW</b-button>
-                        </div>
-                    </div>
-                    <div class="singlePopProd">
-                        <div class="singlePopImg">
-                            <b-img src="~assets/images/eo23.png" fluid alt="eo14"></b-img>
-                        </div>
-                        <div class="singlePopDesc">
-                            <h2>COMFYCAT MAX SELF-CLEANING LITTER BOX (white)</h2>
-                            <b-button variant="theme" class="no-line" to="product_detail"><span>25$</span> VIEW NOW</b-button>
+                            <h2>{{product.name}}</h2>
+                            <b-button variant="theme" class="no-line" :to="`/product/${product.slug}`"><span>${{product.price}}</span> VIEW NOW</b-button>
                         </div>
                     </div>
                 </slick>
@@ -60,6 +55,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
     export default {
         data(){
             return {
@@ -134,6 +130,11 @@
                 this.$refs.sliderSecondary.next()
             }
         },
+        computed:{
+            ...mapState([
+                'products'
+            ])
+        }
     }
 </script>
 

@@ -12,7 +12,7 @@
               <div class="no-content">
                 <h4>Your cart is empty.</h4>
                 <p>Kitty is waiting for his goodies!</p>
-                <b-button variant="theme" to="product">Browse products</b-button>
+                <b-button variant="theme" to="/product">Browse products</b-button>
               </div>
             </div>
           </div>

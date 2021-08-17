@@ -24,7 +24,7 @@
                     <b-row align-v="center">
                         <b-col lg="6">
                             <div class="img-type">
-                                <b-img src="~assets/images/tested.png" fluid alt="Tested"></b-img>
+                                <b-img src="~assets/images/cat_test.png" fluid alt="Tested"></b-img>
                             </div>
                         </b-col>
                         <b-col lg="6">

@@ -107,8 +107,6 @@
     export default {
         data(){
             return {
-                tabIndex: 0,
-                tabs: ['#dogs', '#cats'],
                 popularProduct: {
                     slidesToShow: 4,
                     slidesToScroll: 1,
@@ -140,9 +138,6 @@
                     ]
                 },
             }
-        },
-        mounted() {
-            this.tabIndex = this.tabs.findIndex(tab => tab === this.$route.hash)
         },
         computed:{
             ...mapState([
