@@ -47,6 +47,8 @@
     <CategoryHalf/>
     <Slider></Slider>
     <WhyComfy/>
+    <CtaModel></CtaModel>
+
     <section class="g_section comfy-kit">
         <b-container>
             <b-row>
@@ -85,7 +87,7 @@
 <script>
   import {mapState, mapMutations} from 'vuex'
   export default {
-      
+
       methods:{
           ...mapMutations([
               'setBuyType'

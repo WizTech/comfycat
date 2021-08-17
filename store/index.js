@@ -1,5 +1,6 @@
 export const state = () => ({
         cartData: [],
+        ctModalOpen:true,
         newUser: false,
         buyType: '',
         billingData: {
@@ -62,6 +63,10 @@ export const mutations = {
 
     setBuyType(state, type) {
         state.buyType = type;
+    },
+
+    hideCTModal(state) {
+        state.ctModalOpen = false;
     },
 
     removeItem(state, id) {

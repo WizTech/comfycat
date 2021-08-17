@@ -1,7 +1,7 @@
 <template>
   <div class="productCartDesc seller litterSale">
     <div class="sell_desc">
-      <h2 class="text-uppercase">100% natural premium clumping litter</h2>
+      <h2 class="text-uppercase">100% Natural Corn & Tofu Litter</h2>
       <div class="sell_price">
         <h2 class="active">$25 per month per Cat. 10lbs of 100% Natural Litter</h2>
       </div>
@@ -189,7 +189,7 @@
               <b-button variant="transparent" class="discardProduct">
                 <font-awesome-icon :icon="['far', 'times-circle']"/>
               </b-button>
-              <h5 class="text-uppercase">100% natural premium clumping litter</h5>
+              <h5 class="text-uppercase">100% Natural Corn & Tofu Litter</h5>
               <h5>Size: 20lb</h5>
               <h5>Price: <span class="active">$25</span></h5>
               <h5>Deliver:</h5>
