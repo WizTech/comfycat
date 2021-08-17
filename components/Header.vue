@@ -39,7 +39,7 @@
                                 <i class="active">Purchase</i>
                                 cat litter
                             </template>
-                            <b-dropdown-item to="litter">
+                            <b-dropdown-item to="litter" @click="setBuyType('purchase')">
                                 <div class="dropdown-img">
                                     <img src="~assets/images/cat_litter3.png" alt="Cat litter">
                                 </div>

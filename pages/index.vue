@@ -14,7 +14,7 @@
                       <strong class="d-block">100% Natural Premium Clumping Litter.</strong>
                       Dust free. Clumps in seconds. Flushable. Great odor control. Absorbs 3x better than Clay.  Delivered to your doorstep.
                   </p>
-                  <b-button variant="theme" to="litter">SUBSCRIBE NOW</b-button>
+                  <b-button variant="theme" to="litter" @click="setBuyType('subscribe')">SUBSCRIBE NOW</b-button>
                 </div>
                 <div class="ingrdient">
                     <p>Only Natural Ingredients. Better for Kitty. Better for the Environment:</p>
@@ -83,11 +83,24 @@
 </template>
 
 <script>
-export default {
-  head() {
-    return {
-      title: "Comfycat | Index",
-    }
+  import {mapState, mapMutations} from 'vuex'
+  export default {
+      
+      methods:{
+          ...mapMutations([
+              'setBuyType'
+          ]),
+      },
+      computed: {
+          ...mapState([
+              'buyType'
+          ])
+
+      },
+      head() {
+        return {
+          title: "Comfycat | Index",
+        }
+      }
   }
-}
 </script>
