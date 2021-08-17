@@ -16,7 +16,7 @@
               <div class="content">
                   <ul class="mb-md-4 mb-3">
                     <li>Your order is now in production</li>
-                    <li>Estimated shipping time is: <strong>August 10.</strong></li>
+                    <li>Estimated shipping time is: <strong>{{estimateTime}}.</strong></li>
                     <li><strong>1 week before shipping, we will send you an email with a payment request.</strong></li>
                   </ul>
                   <p class="fs-1 mb-md-4 mb-2">
@@ -102,6 +102,27 @@
     import {mapState} from 'vuex'
 
     export default {
+        data(){
+            return {
+              estimateTime: Date.now()
+            }
+        },
+        methods: {
+            callFunction: function () {
+                let future = new Date();
+                future.setDate(future.getDate() + 30);
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December"
+                ];
+
+                let estimateMonth = monthNames[future.getMonth()];
+                let estimateDate = future.getDate()
+                this.estimateTime = estimateMonth+' '+estimateDate;
+            }
+        },
+        mounted() {
+            this.callFunction()
+        },
         computed: {
             ...mapState([
                 'cartData', 'subTotal', 'billingData'
