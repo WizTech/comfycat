@@ -101,20 +101,15 @@
                     </b-col>
                     <b-col md="4">
                       <div class="form-group">
-                        <b-form-select v-model="form.country">
-                          <b-form-select-option>Country / Region</b-form-select-option>
-                          <b-form-select-option>US</b-form-select-option>
+                        <b-form-select @change="setCountry($event)">
+                          <b-form-select-option  v-for="country in  this.countryStates" :value="country.countryCode">{{country.name}}</b-form-select-option>
                         </b-form-select>
                       </div>
                     </b-col>
                     <b-col md="4">
                       <div class="form-group">
-                        <b-form-select v-model="form.state">
-                          <b-form-select-option>State</b-form-select-option>
-                          <b-form-select-option>Florida</b-form-select-option>
-                          <b-form-select-option>Texas</b-form-select-option>
-                          <b-form-select-option>Delware</b-form-select-option>
-                          <b-form-select-option>Colarado</b-form-select-option>
+                        <b-form-select @change="setState($event)">
+                          <b-form-select-option v-for="state in  this.states">{{state.name}}</b-form-select-option>
                         </b-form-select>
                       </div>
                     </b-col>
@@ -232,10 +227,14 @@
 <script>
     import {mapState, mapMutations,mapGetters} from 'vuex'
 
+    import json from '../store/country-state'
+
     export default {
         data() {
             return {
                 errors: [],
+                states: [],
+                countryStates: json,
                 form: {
                     first_name: '',
                     last_name: '',
@@ -254,6 +253,17 @@
             }
         },
         methods: {
+            getStatesByCode(code) {
+                return this.countryStates.find(country => country.countryCode == code)
+            },
+            setCountry(code){
+                let country = this.getStatesByCode(code);
+              this.states = country.stateProvinces;
+              this.form.country = country.name;
+            },
+            setState(state){
+                this.form.state = state;
+            },
             ...mapMutations(['saveBillingInfo', 'setNewUser']),
             validEmail: function (email) {
                 var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -317,6 +327,9 @@
                 'cartData', 'subTotal', 'newUser','billingData'
             ])
 
+        },
+        mounted() {
+            console.log(this.countryStates[0])
         }
     }
 </script>
