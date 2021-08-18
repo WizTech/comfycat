@@ -102,14 +102,16 @@
                     <b-col md="4">
                       <div class="form-group">
                         <b-form-select @change="setCountry($event)">
-                          <b-form-select-option  v-for="country in  this.countryStates" :value="country.countryCode">{{country.name}}</b-form-select-option>
+                          <b-form-select-option>Country / Region</b-form-select-option>
+                          <b-form-select-option  v-for="country in  this.countryStates" :value="country.countryCode" :key="country.id">{{country.name}}</b-form-select-option>
                         </b-form-select>
                       </div>
                     </b-col>
                     <b-col md="4">
                       <div class="form-group">
                         <b-form-select @change="setState($event)">
-                          <b-form-select-option v-for="state in  this.states">{{state.name}}</b-form-select-option>
+                          <b-form-select-option>State</b-form-select-option>
+                          <b-form-select-option v-for="state in  this.states" :key="state.id">{{state.name}}</b-form-select-option>
                         </b-form-select>
                       </div>
                     </b-col>
