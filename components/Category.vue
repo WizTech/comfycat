@@ -87,7 +87,7 @@
                             <slick :options="popularProduct">
                                 <div class="singlePopProd"
                                         v-for="product in products"
-                                    :key="product.id"
+                                    :key="product.id" v-if="product.id == 2"
                                 >
                                     <div class="singlePopImg">
                                         <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>

@@ -50,11 +50,11 @@
                                         </div>
                                         <p class="quantity-no">
                                             <span class="d-md-inline-block d-none ml-2">Quantity:</span>
-                                            <span class="itemInCart">1</span>
+                                            <span class="itemInCart">{{product.qty}}</span>
                                         </p>
                                         <div class="quantity-btns">
-                                            <b-button variant="inc"><font-awesome-icon :icon="['fa', 'angle-up']"/></b-button>
-                                            <b-button variant="dec" class="d-none d-md-block"><font-awesome-icon :icon="['fa', 'angle-down']"/></b-button>
+                                            <b-button variant="inc" @click="addQty(product.id)"><font-awesome-icon :icon="['fa', 'angle-up']"/></b-button>
+                                            <b-button variant="dec" @click="reduceQty(product.id)" class="d-none d-md-block"><font-awesome-icon :icon="['fa', 'angle-down']"/></b-button>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                 </div>
                                 <b-row class="ready-btn">
                                     <b-col md="6" class="mb-md-0 mb-3">
-                                        <b-button variant="theme" class="w-100" to="cart" @click="addItem(2);addGoal('Add to Cart Button')">I AM READY: ADD TO CART</b-button>
+                                        <b-button variant="theme" class="w-100" to="cart" @click="addSaleItem(2);addGoal('Add to Cart Button')">I AM READY: ADD TO CART</b-button>
                                     </b-col>
                                     <b-col md="6">
                                         <b-button variant="theme" class="w-100" @click="addGoal('Send me more information')">
@@ -121,10 +121,16 @@
             }
         },
         methods: {
-            ...mapMutations(['addItem', 'removeItem','reduceQty','addQty']),
+            ...mapMutations(['addItem','addSaleItem', 'removeItem','reduceQty','addQty']),
             addGoal(label) {
                 this.$ga.event('Button', 'Click', label, Date.now())
             }
+        },
+        computed:{
+            product() {
+                return this.$store.getters.getProductById('comfycat-max-self-cleaning-litter-box');
+            },
+
         }
     }
 </script>

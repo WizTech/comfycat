@@ -167,8 +167,8 @@
                 <b-img src="~assets/images/selfClean.png" fluid alt="litterRecommend"></b-img>
             </div>
             <div class="freeDesc">
-                <p>Comfycat Max Self-Cleaning Litter Box</p>
-                <b-button variant="outline-theme" size="sm" @click="addItem(2);addGoal()" v-b-modal.addToCart>$399 – ADD TO CART</b-button>
+                <p>{{recommendProduct.name}}</p>
+                <b-button variant="outline-theme" size="sm" @click="addItem(recommendProduct.id);addGoal()" v-b-modal.addToCart>${{recommendProduct.price}} – ADD TO CART</b-button>
             </div>
             </div>
         </b-col>
@@ -248,6 +248,10 @@
             product() {
                 return this.$store.getters.getProductById('tofu-litter');
             },
+            recommendProduct() {
+                return this.$store.getters.getRecommendProductById(2);
+            },
+
             tabIndex(){
               return this.buyType == 'subscribe' ? 1 : 0;
             },

@@ -216,7 +216,7 @@
                 return this.$store.getters.getProductById(this.$route.params.id);
             },
             recommendProduct() {
-                return this.$store.getters.getRecommendProductById(this.$route.params.id);
+                return this.$store.getters.getRecommendProductById(1);
             },
             ...mapState([
                 'cartData','subTotal'

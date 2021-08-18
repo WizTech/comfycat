@@ -58,7 +58,7 @@ export const getters = {
     return state.billingData
   },
   getRecommendProductById: (state) => (id) => {
-    return state.products.find(product => product.id != id)
+    return state.products.find(product => product.id == id)
   },
   getBuyType: (state) => {
     return state.buyType
@@ -73,21 +73,38 @@ export const mutations = {
       state.cartData.push(item)
     }
   },
-  addQty(state, id) {
+  addSaleItem(state, id) {
     let item = state.products.find(product => product.id == id)
-    if (state.cartData.includes(item)) {
-      item.qty+=1;
-    }else{
-      item.qty+=1;
+    item.price = 399
+
+    if (!state.cartData.includes(item)) {
       state.subTotal += parseInt(item.price)
       state.cartData.push(item)
     }
   },
-  reduceQty(state, id) {
-    item.qty=1;
+  addQty(state, id) {
     let item = state.products.find(product => product.id == id)
+    if (state.cartData.includes(item)) {
+      state.subTotal += parseInt(item.price) * parseInt(item.qty);
+      item.qty+=1;
+    }else{
+      state.subTotal += parseInt(item.price) * parseInt(item.qty);
+      item.qty+=1;
+
+//      state.subTotal += parseInt(item.price)
+      state.cartData.push(item)
+    }
+  },
+  reduceQty(state, id) {
+    let item = state.products.find(product => product.id == id)
+    if(typeof item != 'undefined'){
+          item.qty=1;
+        }
+
     if (state.cartData.includes(item) && item.qty !== 0) {
       item.qty-=1;
+      state.subTotal += parseInt(item.price) * parseInt(item.qty);
+
     }else{
       this.removeItem(state,id)
     }
