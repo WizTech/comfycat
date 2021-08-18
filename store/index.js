@@ -99,6 +99,7 @@ export const mutations = {
 
   hideCTModal(state) {
     state.ctModalOpen = false;
+   // alert(state.ctModalOpen)
   },
 
   removeItem(state, id) {

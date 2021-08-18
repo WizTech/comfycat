@@ -52,11 +52,8 @@
         methods: {
             ...mapMutations(['hideCTModal']),
             openModal() {
-                if(this.ctModalOpen){
-                    this.$refs['ctaModals'].show()
-                    this.hideCTModal()
-
-                }
+                this.hideCTModal()
+                this.$refs['ctaModals'].show()
             }
 
         },
@@ -69,7 +66,9 @@
         mounted() {
             let _self = this
             setTimeout(function (scope) {
-                _self.openModal()
+                if(_self.ctModalOpen) {
+                    _self.openModal()
+                }
             }, 4000, this);
 
         },

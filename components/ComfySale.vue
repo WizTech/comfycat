@@ -81,10 +81,10 @@
                                 </div>
                                 <b-row class="ready-btn">
                                     <b-col md="6" class="mb-md-0 mb-3">
-                                        <b-button variant="theme" class="w-100" to="cart" >I AM READY: ADD TO CART</b-button>
+                                        <b-button variant="theme" class="w-100" to="cart" @click="addItem(2);addGoal('Add to Cart Button')">I AM READY: ADD TO CART</b-button>
                                     </b-col>
                                     <b-col md="6">
-                                        <b-button variant="theme" class="w-100">
+                                        <b-button variant="theme" class="w-100" @click="addGoal('Send me more information')">
                                             I AM NOT READY:
                                             <small class="d-block">
                                                 Email me More information &amp; Your Free e-book: ‘How to Choose the Perfect Self-Cleaning Cat Litter Box and the Healthiest Cat Litter
@@ -109,6 +109,8 @@
 </template>
 
 <script>
+    import {mapMutations} from 'vuex'
+
     export default {
         props: ['version', 'withArrows', 'versionV2'],
         data(){
@@ -119,8 +121,9 @@
             }
         },
         methods: {
-            addGoal() {
-                this.$ga.event('Button', 'Click', 'Add to Cart Button', Date.now())
+            ...mapMutations(['addItem', 'removeItem','reduceQty','addQty']),
+            addGoal(label) {
+                this.$ga.event('Button', 'Click', label, Date.now())
             }
         }
     }

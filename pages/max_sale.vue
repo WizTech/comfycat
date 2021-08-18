@@ -6,7 +6,7 @@
         <EvenOddDescriptionMax />
         <ProductComments />
         <ComfySale :version="version" :withArrows="withArrows"/>
-        <CtaModel></CtaModel>
+      <!--  <CtaModel></CtaModel>-->
     </main>
 </template>
 
@@ -24,7 +24,7 @@
             title: "Comfycat | Max Sales",
             }
         }
-        
+
     }
 </script>
 
