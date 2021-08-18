@@ -208,13 +208,13 @@
                     </div>
                     <p class="quantity-no m-0">
                       <span class="d-md-inline-block d-none ml-2">Quantity:</span>
-                      <span class="itemInCart">1</span>
+                      <span class="itemInCart">{{product.qty}}</span>
                     </p>
                     <div class="quantity-btns">
-                      <b-button variant="inc">
+                      <b-button variant="inc" @click="addQty(product.id)">
                         <font-awesome-icon :icon="['fa', 'angle-up']"/>
                       </b-button>
-                      <b-button variant="dec" class="d-none d-md-block">
+                      <b-button variant="dec" @click="reduceQty(product.id)" class="d-none d-md-block">
                         <font-awesome-icon :icon="['fa', 'angle-down']"/>
                       </b-button>
                     </div>

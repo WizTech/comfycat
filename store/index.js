@@ -67,7 +67,7 @@ export const getters = {
 export const mutations = {
   addItem(state, id) {
     let item = state.products.find(product => product.id == id)
-    item.qty=1;
+
     if (!state.cartData.includes(item)) {
       state.subTotal += parseInt(item.price)
       state.cartData.push(item)
@@ -77,9 +77,14 @@ export const mutations = {
     let item = state.products.find(product => product.id == id)
     if (state.cartData.includes(item)) {
       item.qty+=1;
+    }else{
+      item.qty+=1;
+      state.subTotal += parseInt(item.price)
+      state.cartData.push(item)
     }
   },
   reduceQty(state, id) {
+    item.qty=1;
     let item = state.products.find(product => product.id == id)
     if (state.cartData.includes(item) && item.qty !== 0) {
       item.qty-=1;

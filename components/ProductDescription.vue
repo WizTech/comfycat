@@ -84,19 +84,19 @@
             <div class="d-flex">
               <div class="quantity">
                 <div class="quantity-btns d-md-none d-block">
-                  <b-button variant="dec">
+                  <b-button variant="dec" @click="reduceQty(product.id)">
                     <font-awesome-icon :icon="['fa', 'angle-down']"/>
                   </b-button>
                 </div>
                 <p class="quantity-no">
                   <span class="d-md-inline-block d-none ml-2">Quantity:</span>
-                  <span class="itemInCart">1</span>
+                  <span class="itemInCart">{{product.qty}}</span>
                 </p>
                 <div class="quantity-btns">
-                  <b-button variant="inc">
+                  <b-button variant="inc" @click="addQty(product.id)">
                     <font-awesome-icon :icon="['fa', 'angle-up']"/>
                   </b-button>
-                  <b-button variant="dec" class="d-none d-md-block">
+                  <b-button variant="dec" class="d-none d-md-block" @click="reduceQty(product.id)">
                     <font-awesome-icon :icon="['fa', 'angle-down']"/>
                   </b-button>
                 </div>
@@ -161,13 +161,13 @@
                 </div>
                 <p class="quantity-no m-0">
                   <span class="d-md-inline-block d-none ml-2">Quantity:</span>
-                  <span class="itemInCart">1</span>
+                  <span class="itemInCart">{{product.qty}}</span>
                 </p>
                 <div class="quantity-btns">
-                  <b-button variant="inc">
+                  <b-button variant="inc" @click="addQty(product.id)">
                     <font-awesome-icon :icon="['fa', 'angle-up']"/>
                   </b-button>
-                  <b-button variant="dec" class="d-none d-md-block">
+                  <b-button variant="dec" class="d-none d-md-block" @click="reduceQty(product.id)">
                     <font-awesome-icon :icon="['fa', 'angle-down']"/>
                   </b-button>
                 </div>
@@ -209,7 +209,7 @@
             addGoal() {
                 this.$ga.event('Button', 'Click', 'Add to Cart Button', Date.now())
             },
-            ...mapMutations(['addItem', 'removeItem'])
+            ...mapMutations(['addItem', 'removeItem','reduceQty','addQty'])
         },
         computed: {
             product() {
