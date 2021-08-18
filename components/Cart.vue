@@ -1,6 +1,6 @@
 <template>
   <section class="doubleLayout">
-    <b-container v-if="Object.keys(cartData).length == 0">
+    <b-container v-if="cartLength == 0">
       <b-row>
         <b-col lg="7" class="order-lg-0 order-1">
           <div class="checkout-main">
@@ -43,7 +43,7 @@
             </div>
             <div class="addCartSection">
               <div class="productSelected">
-                <div class="singleProduct" v-for="product in cartData" :key=product.id>
+                <div class="singleProduct" v-for="product in cartData" :key=product.id v-if="product.qty > 0">
                   <div class="singleImage">
                     <b-img :src="require(`@/assets/images/${product.images}`)"  fluid alt="eo14"></b-img>
                   </div>
@@ -81,13 +81,13 @@
                       </div>
                       <p class="quantity-no m-0">
                         <span class="d-md-inline-block d-none ml-2">Quantity:</span>
-                        <span class="itemInCart">1</span>
+                        <span class="itemInCart">{{product.qty}}</span>
                       </p>
                       <div class="quantity-btns">
-                        <b-button variant="inc">
+                        <b-button variant="inc" @click="addQty(product.id)">
                           <font-awesome-icon :icon="['fa', 'angle-up']"/>
                         </b-button>
-                        <b-button variant="dec" class="d-none d-md-block">
+                        <b-button variant="dec" class="d-none d-md-block" @click="reduceQty(product.id)">
                           <font-awesome-icon :icon="['fa', 'angle-down']"/>
                         </b-button>
                       </div>
@@ -130,11 +130,11 @@
                     <div class="summaryTotals">
                       <div class="singleTotal">
                         <p>Subtotal</p>
-                        <p>$50.00</p>
+                        <p>${{subTotal}}</p>
                       </div>
                       <div class="singleTotal total">
                         <p>Total</p>
-                        <p>$50.00</p>
+                        <p>${{subTotal}}</p>
                       </div>
                     </div>
                     <p class="text-center bold text-uppercase small">
@@ -154,13 +154,16 @@
 </template>
 
 <script>
-    import {mapState, mapMutations} from 'vuex'
+    import {mapGetters,mapState, mapMutations} from 'vuex'
 
     export default {
         methods: {
-            ...mapMutations(['removeItem'])
+            ...mapMutations(['removeItem','addQty','reduceQty'])
         },
         computed: {
+            cartLength(){
+                return Object.keys(this.cartData).length;
+            },
             ...mapState([
                 'cartData', 'subTotal'
             ])

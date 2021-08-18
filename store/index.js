@@ -26,7 +26,7 @@ export const state = () => ({
         description: "$25 per month per Cat. 10lbs of 100% Natural Litter",
         price: "25",
         cart: false,
-        qty: 0,
+        qty: 1,
         category: "tofu",
         slug: "tofu-litter",
         images: "cat_litter3.png"
@@ -37,7 +37,7 @@ export const state = () => ({
         description: "Your scooping days are over. Comfycat Zen is a fully automatic, self-cleaning litter box for cats. It is safe & quiet and has great odour control.",
         price: "499",
         cart: false,
-        qty: 0,
+        qty: 1,
         slug: "comfycat-max-self-cleaning-litter-box",
         category: "max",
         images: "selfClean.png"
@@ -67,9 +67,24 @@ export const getters = {
 export const mutations = {
   addItem(state, id) {
     let item = state.products.find(product => product.id == id)
+    item.qty=1;
     if (!state.cartData.includes(item)) {
       state.subTotal += parseInt(item.price)
       state.cartData.push(item)
+    }
+  },
+  addQty(state, id) {
+    let item = state.products.find(product => product.id == id)
+    if (state.cartData.includes(item)) {
+      item.qty+=1;
+    }
+  },
+  reduceQty(state, id) {
+    let item = state.products.find(product => product.id == id)
+    if (state.cartData.includes(item) && item.qty !== 0) {
+      item.qty-=1;
+    }else{
+      this.removeItem(state,id)
     }
   },
 

@@ -168,79 +168,67 @@
             </div>
             <div class="freeDesc">
                 <p>Comfycat Max Self-Cleaning Litter Box</p>
-                <b-button variant="outline-theme" size="sm" @click="addItem(1);addGoal()">$399 – ADD TO CART</b-button>
+                <b-button variant="outline-theme" size="sm" @click="addItem(2);addGoal()" v-b-modal.addToCart>$399 – ADD TO CART</b-button>
             </div>
             </div>
         </b-col>
       </b-row>
     </div>
     <b-modal id="addToCart" title="your cart" hide-footer modal-class="addToCart">
-      <div class="addCartSection">
-        <p class="active text-center">
-          <font-awesome-icon :icon="['far', 'check-square']" class="mr-2"/>
-          You qualify for free shipping!
-        </p>
-        <div class="productSelected">
-          <div class="singleProduct">
-            <div class="singleImage">
-              <b-img src="~assets/images/litter3.png"  fluid alt="eo14"></b-img>
-            </div>
-            <div class="singleDesc">
-              <b-button variant="transparent" class="discardProduct">
-                <font-awesome-icon :icon="['far', 'times-circle']"/>
-              </b-button>
-              <h5 class="text-uppercase">100% Natural Corn & Tofu Litter</h5>
-              <h5>Size: 20lb</h5>
-              <h5>Price: <span class="active">$25</span></h5>
-              <h5>Deliver:</h5>
-              <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
-                Once every 2 months
-              </b-form-checkbox>
-              <b-form-checkbox id="checkbox-2" name="checkbox-2" value="accepted">
-                Once every 3 months
-              </b-form-checkbox>
-              <div class="quantity mt-3">
-                <div class="quantity-btns d-md-none d-block">
-                  <b-button variant="dec">
-                    <font-awesome-icon :icon="['fa', 'angle-down']"/>
-                  </b-button>
+          <div class="addCartSection">
+            <p class="active text-center">
+              <font-awesome-icon :icon="['far', 'check-square']" class="mr-2"/>
+              You qualify for free shipping!
+            </p>
+            <div class="productSelected">
+              <div class="singleProduct" v-for="cartProduct in cartData" :key="cartProduct.id">
+
+                <div class="singleImage">
+                  <b-img :src="require(`@/assets/images/${cartProduct.images}`)"  fluid alt="eo14"></b-img>
                 </div>
-                <p class="quantity-no m-0">
-                  <span class="d-md-inline-block d-none ml-2">Quantity:</span>
-                  <span class="itemInCart">1</span>
-                </p>
-                <div class="quantity-btns">
-                  <b-button variant="inc">
-                    <font-awesome-icon :icon="['fa', 'angle-up']"/>
+                <div class="singleDesc">
+                  <b-button variant="transparent" class="discardProduct" @click="removeItem(cartProduct.id)">
+                    <font-awesome-icon :icon="['far', 'times-circle']"/>
                   </b-button>
-                  <b-button variant="dec" class="d-none d-md-block">
-                    <font-awesome-icon :icon="['fa', 'angle-down']"/>
-                  </b-button>
+                  <h5 class="text-uppercase">{{cartProduct.name}}</h5>
+                  <h5>Size: 20lb</h5>
+                  <h5>Price: <span class="active">${{cartProduct.price}}</span></h5>
+                  <!--<h5>Deliver:</h5>
+                  <b-form-checkbox id="checkbox-1" name="checkbox-1" value="accepted" checked>
+                    Once every 2 months
+                  </b-form-checkbox>
+                  <b-form-checkbox id="checkbox-2" name="checkbox-2" value="accepted">
+                    Once every 3 months
+                  </b-form-checkbox>-->
+                  <div class="quantity mt-3">
+                    <div class="quantity-btns d-md-none d-block">
+                      <b-button variant="dec">
+                        <font-awesome-icon :icon="['fa', 'angle-down']"/>
+                      </b-button>
+                    </div>
+                    <p class="quantity-no m-0">
+                      <span class="d-md-inline-block d-none ml-2">Quantity:</span>
+                      <span class="itemInCart">1</span>
+                    </p>
+                    <div class="quantity-btns">
+                      <b-button variant="inc">
+                        <font-awesome-icon :icon="['fa', 'angle-up']"/>
+                      </b-button>
+                      <b-button variant="dec" class="d-none d-md-block">
+                        <font-awesome-icon :icon="['fa', 'angle-down']"/>
+                      </b-button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="cartRecommended d-none">
-        <h5>RECOMMENDED WITH:</h5>
-        <div class="forFree">
-          <div class="freeItem">
-            <div class="freeImg">
-              <b-img src="~assets/images/product1.png" fluid alt="product"></b-img>
-            </div>
-            <div class="freeDesc">
-              <p>Comfycat Zen Self-Cleaning Litter Box</p>
-              <b-button variant="outline-theme" class="btn-med w-100">$399 – ADD TO CART</b-button>
-            </div>
+          <div class="addCartSection footer">
+            <p class="text-center bold">SUBTOTAL: ${{subTotal}} <NuxtLink to="/cart" class="active ml-4">VIEW CART</NuxtLink></p>
+            <b-button variant="theme" class="w-100" :to="'/checkout'">checkout now</b-button>
           </div>
-        </div>
-      </div>
-      <div class="addCartSection footer">
-        <p class="text-center bold">SUBTOTAL: $50 <NuxtLink to="cart" class="active ml-4">VIEW CART</NuxtLink></p>
-        <b-button variant="theme" class="w-100" :to="'/checkout'">checkout now</b-button>
-      </div>
-    </b-modal>
+        </b-modal>
+
   </div>
 </template>
 
@@ -261,7 +249,7 @@
               return this.buyType == 'subscribe' ? 1 : 0;
             },
             ...mapState([
-                'buyType'
+                'buyType','cartData','subTotal'
             ])
 
         }
