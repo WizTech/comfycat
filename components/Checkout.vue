@@ -329,7 +329,9 @@
 
         },
         mounted() {
-            console.log(this.countryStates[0])
+            if(this.cartData.length == 0){
+                this.$router.push('/')
+            }
         }
     }
 </script>

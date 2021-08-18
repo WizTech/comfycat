@@ -64,13 +64,13 @@
                                     </div>
                                     <p class="quantity-no">
                                     <span class="d-md-inline-block d-none ml-2">Quantity:</span>
-                                    <span class="itemInCart">1</span>
+                                    <span class="itemInCart">{{product.qty}}</span>
                                     </p>
                                     <div class="quantity-btns">
-                                    <b-button variant="inc">
+                                    <b-button variant="inc" @click="addQty(product.id)">
                                         <font-awesome-icon :icon="['fa', 'angle-up']"/>
                                     </b-button>
-                                    <b-button variant="dec" class="d-none d-md-block">
+                                    <b-button variant="dec" @click="reduceQty(product.id)"  class="d-none d-md-block">
                                         <font-awesome-icon :icon="['fa', 'angle-down']"/>
                                     </b-button>
                                     </div>
@@ -78,7 +78,7 @@
                             </div>
                         </b-col>
                         <b-col lg="7">
-                            <b-button variant="theme" class="w-100" @click="addItem(1);addGoal"  v-b-modal.addToCart>
+                            <b-button variant="theme" class="w-100" @click="addItem(product.id);addGoal"  v-b-modal.addToCart>
                                 add to cart
                             </b-button>
                         </b-col>
@@ -236,7 +236,7 @@
     import {mapGetters, mapState, mapMutations} from 'vuex'
     export default {
         methods:{
-            ...mapMutations(['addItem', 'removeItem']),
+            ...mapMutations(['addItem', 'removeItem','reduceQty','addQty']),
           addGoal(){
               this.$ga.event('Button', 'Click', 'Add to Cart Button', Date.now())
           },
@@ -245,6 +245,9 @@
           ]),
         },
         computed: {
+            product() {
+                return this.$store.getters.getProductById('tofu-litter');
+            },
             tabIndex(){
               return this.buyType == 'subscribe' ? 1 : 0;
             },
